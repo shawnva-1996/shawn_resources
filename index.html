@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Smart Savings for OFWs | Secure Your Family's Future</title>
+  <meta
+    name="description"
+    content="Grow your overseas earnings 2x faster with capital protection. Designed specifically for Filipino workers abroad to build wealth back home."
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --primary: #0a6e7d;
+      --primary-light: #4a9ba8;
+      --primary-dark: #054550;
+      --secondary: #ff9f1c;
+      --secondary-light: #ffbf69;
+      --neutral-light: #f8f9fa;
+      --neutral: #e9ecef;
+      --neutral-dark: #495057;
+      --accent: #e63946;
+      --white: #ffffff;
+      --text: #212529;
+      --text-light: #6c757d;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+      --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.16);
+      --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+      --rounded-sm: 8px;
+      --rounded-md: 12px;
+      --rounded-lg: 16px;
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background-color: var(--neutral-light);
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60%;
+      height: 4px;
+      background: var(--secondary);
+      border-radius: 2px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--primary-dark);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(
+          rgba(10, 110, 125, 0.85),
+          rgba(10, 110, 125, 0.9)
+        ),
+        url("images/hero-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    .hero-pitch {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--secondary-light);
+      margin-bottom: 1.5rem;
+      line-height: 1.4;
+    }
+
+    /* Testimonial Banner */
+    .testimonial-banner {
+      background-color: var(--primary-dark);
+      color: var(--white);
+      padding: 15px 0;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .testimonial-banner i {
+      color: var(--secondary-light);
+      margin-right: 8px;
+    }
+
+    /* Sections */
+    .section {
+      padding: 80px 20px;
+    }
+
+    .section-light {
+      background-color: var(--white);
+    }
+
+    .section-accent {
+      background-color: var(--neutral);
+    }
+    /* For the gradient section specifically: */
+    .section-gradient #resultDisplay {
+      background: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Stats */
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .stat-card {
+      background: var(--white);
+      border-radius: var(--rounded-md);
+      padding: 30px;
+      width: 280px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      text-align: center;
+      border-top: 4px solid var(--secondary);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .stat-card p {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 0;
+    }
+
+    /* Personas */
+    .persona-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .persona-card {
+      background-color: var(--white);
+      width: 320px;
+      padding: 25px;
+      border-radius: var(--rounded-md);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      text-align: center;
+      border-top: 4px solid var(--primary-light);
+    }
+
+    .persona-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .persona-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: var(--rounded-sm);
+      margin-bottom: 20px;
+    }
+
+    .persona-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: var(--primary-dark);
+    }
+
+    .persona-card p {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    /* Calculator */
+    .calculator-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 40px;
+      border-radius: var(--rounded-lg);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .calculator-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--primary-dark);
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--neutral);
+      border-radius: var(--rounded-sm);
+      font-family: "Montserrat", sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 3px rgba(10, 110, 125, 0.1);
+    }
+
+    button {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 14px 28px;
+      border: none;
+      border-radius: var(--rounded-sm);
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: var(--primary-dark);
+    }
+
+    /* Results */
+    #resultDisplay {
+      background: var(--white);
+      padding: 30px;
+      border-radius: var(--rounded-md);
+      margin-top: 40px;
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--secondary);
+      color: var(--text); /* Ensures dark text */
+    }
+
+    /* Charts */
+    .chart-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .chart-container {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+      background: var(--white);
+      padding: 25px;
+      border-radius: var(--rounded-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .chart-container img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--rounded-sm);
+    }
+
+    /* Guarantee Badge */
+    .guarantee-badge {
+      background-color: var(--secondary-light);
+      color: var(--primary-dark);
+      padding: 15px 25px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      font-weight: 600;
+      margin: 20px 0;
+    }
+
+    .guarantee-badge i {
+      margin-right: 10px;
+      font-size: 1.5rem;
+    }
+
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--neutral);
+    }
+
+    .comparison-table th {
+      background-color: var(--primary-light);
+      color: var(--white);
+    }
+
+    .comparison-table tr:nth-child(even) {
+      background-color: var(--neutral-light);
+    }
+
+    .comparison-table .check {
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .comparison-table .cross {
+      color: var(--accent);
+    }
+
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 15px;
+      border: 1px solid var(--neutral);
+      border-radius: var(--rounded-sm);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 15px;
+      background-color: var(--neutral-light);
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      padding: 15px;
+      display: none;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-dark);
+      color: var(--white);
+      padding: 60px 20px 30px;
+      text-align: center;
+    }
+
+    footer p {
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    .disclaimer {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Floating CTA */
+    .floating-cta {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--secondary);
+      color: var(--primary-dark);
+      font-weight: 600;
+      padding: 16px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: var(--shadow-lg);
+      z-index: 1000;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+    }
+
+    .floating-cta.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .floating-cta:hover {
+      background-color: var(--secondary-light);
+      transform: translateY(-3px);
+    }
+
+    .floating-cta i {
+      margin-right: 10px;
+      font-size: 1.4rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero-pitch {
+        font-size: 1.2rem;
+      }
+
+      header {
+        padding: 80px 15px;
+      }
+
+      .section {
+        padding: 60px 15px;
+      }
+
+      .stat-card {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .persona-card {
+        width: 100%;
+      }
+
+      .calculator-container {
+        padding: 30px 20px;
+      }
+
+      .floating-cta {
+        bottom: 20px;
+        right: 20px;
+        padding: 14px 20px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+<body>
+    <div id="navbar-container"></div>
+    <script src="js/include-navbar.js"></script>
+  <!-- Testimonial Banner -->
+  <div class="testimonial-banner">
+    <i class="fas fa-quote-left"></i>
+    "This plan helped me save ₱1.2M for my daughter's college in just 4
+    years!" - Maria S., OFW in Singapore
+  </div>
+
+  <header>
+    <div class="container">
+      <h1 style="color: white">
+        Smart Savings for Overseas Filipino Investors
+      </h1>
+
+      <div class="hero-pitch">Loading tagline...</div>
+
+      <p
+        style="
+          color: rgba(255, 255, 255, 0.9);
+          max-width: 800px;
+          margin: 0 auto;
+        "
+      >
+        Grow your hard-earned money much faster than regular savings accounts
+        with our index-linked plan. 100% capital protection means your
+        family's future is secure, no matter what happens in the markets.
+      </p>
+
+      <div class="guarantee-badge">
+        <i class="fas fa-shield-alt"></i>
+        Your Capital is 100% Protected at Maturity
+      </div>
+    </div>
+  </header>
+
+  <section class="section section-light">
+    <div class="container">
+      <h2>Why Thousands of OFWs Choose This Plan</h2>
+      <p style="max-width: 700px; margin: 0 auto 40px">
+        Unlike risky investments or low-yield savings accounts, our plan
+        offers the perfect balance: growth potential when markets rise, and
+        protection when they fall. Sleep well knowing your family's future is
+        secure.
+      </p>
+
+      <div class="stats-container">
+        <div class="stat-card">
+          <h3>
+            <i
+              class="fas fa-chart-line"
+              style="color: var(--secondary); margin-right: 8px"
+            ></i>
+            Average Returns
+          </h3>
+          <p>Up to <span class="counter" data-target="99.62">0</span>%*</p>
+          <p style="font-size: 0.9rem">5-year plan projected performance</p>
+        </div>
+        <div class="stat-card">
+          <h3>
+            <i
+              class="fas fa-peso-sign"
+              style="color: var(--secondary); margin-right: 8px"
+            ></i>
+            Potential Growth
+          </h3>
+          <p>Up to ₱<span class="counter" data-target="2200000">0</span>*</p>
+          <p style="font-size: 0.9rem">Projected maturity value</p>
+        </div>
+        <div class="stat-card">
+          <h3>
+            <i
+              class="fas fa-user-tie"
+              style="color: var(--secondary); margin-right: 8px"
+            ></i>
+            Clients Served
+          </h3>
+          <p><span class="counter" data-target="100"></span>+</p>
+          <p style="font-size: 0.9rem">Filipino and Singaporean Investors</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Real Stories From OFWs Like You</h2>
+      <p style="max-width: 700px; margin: 0 auto 40px">
+        Don't just take our word for it. Here's how this plan has helped real
+        overseas workers achieve their dreams.
+      </p>
+
+      <div class="persona-row">
+        <div class="persona-card">
+          <img
+            src="images/education-planner.jpg"
+            alt="Parents planning education"
+          />
+          <h3>Sharmaine Tumaca, RN</h3>
+          <p>
+            "Working here in Singapore and starting to save early on has proven to be one of the most prudent decisions I've ever made. Not only does it provide me with a sense of security, but it also gives me the freedom to pursue my goals and aspirations without worrying about the financial implications. By starting early, I've given myself a significant advantage, as I have more time to accumulate savings and make my money work for me. This, in turn, will enable me to live a more comfortable life, free from financial stress, and provide for my family's needs in the future."
+          </p>
+          <p style="font-weight: 600; color: var(--primary)">
+            Projected Growth of 32.5% (Capital Guaranteed)
+          </p>
+        </div>
+        <div class="persona-card">
+          <img src="images/family-saver.jpg" alt="Family saving together" />
+          <h3>Jose's Sari-Sari Store</h3>
+          <p>
+            "The ₱950,000 I got at maturity was enough to open two sari-sari
+            stores back home. Now my wife runs the business while I work
+            abroad."
+          </p>
+          <p style="font-weight: 600; color: var(--primary)">
+            ₱600K → ₱950K in 6 years
+          </p>
+        </div>
+        <div class="persona-card">
+          <img
+            src="images/retirement-builder.jpg"
+            alt="Happy retired couple"
+          />
+          <h3>Dr. Christina Floresca</h3>
+          <p>
+            "This investment truly excites me—knowing there's potential for
+            double returns gives me confidence in its long-term value. It's
+            not just growth I'm chasing; it's the peace of mind that comes
+            from reinforcing the investment portion of my retirement portfolio
+            with something stable and performance-driven."
+          </p>
+          <p style="font-weight: 600; color: var(--primary)">
+            ₱1M → ₱2.1M in 15 years
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="margin-top: 50px">
+    <div class="chart-row">
+      <div class="chart-container">
+        <h4 style="margin-top: 0; color: var(--primary)">
+          Why its good to keep money in Singapore...
+        </h4>
+        <canvas id="exchangeRateChart" width="900" height="450"></canvas>
+        <p
+          style="
+            font-size: 0.8rem;
+            text-align: center;
+            color: var(--text-light);
+          "
+        >
+          1 SGD to PHP is projected to be 60 Pesos by 2040!
+        </p>
+      </div>
+
+      <div class="chart-container">
+        <h4 style="margin-top: 0; color: var(--primary)">
+          ...combine this with the strength of the Singapore market...
+        </h4>
+        <canvas id="cumulativeChart" width="900" height="450"></canvas>
+        <p
+          style="
+            font-size: 0.8rem;
+            text-align: center;
+            color: var(--text-light);
+          "
+        >
+          Estimated values based on historical index performance*
+        </p>
+      </div>
+
+      <div class="chart-container">
+        <h4 style="margin-top: 0; color: var(--primary)">
+          ...gives you double the returns!
+        </h4>
+        <canvas id="returnsChart" width="900" height="450"></canvas>
+        <p
+          style="
+            font-size: 0.8rem;
+            text-align: center;
+            color: var(--text-light);
+          "
+        >
+          Total Returns is at about twice the invested capital!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <section
+    class="section section-gradient"
+    style="
+      background: linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+      );
+      color: var(--white);
+    "
+  >
+    <div class="container">
+      <h2 style="color: var(--white)">
+        Ready to Stack Into Your Future?
+      </h2>
+      <p
+        style="
+          max-width: 700px;
+          margin: 0 auto 40px;
+          color: rgba(255, 255, 255, 0.9);
+        "
+      >
+        Take the first step today. See exactly how much you could earn with a
+        personalized projection.
+      </p>
+
+      <div class="calculator-container">
+        <h3
+          style="text-align: center; margin-bottom: 30px; color: var(--white)"
+        >
+          Get Your Free Projection
+        </h3>
+
+        <form id="returnForm">
+          <div class="form-group">
+            <label for="name" style="color: var(--white)">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Juan Dela Cruz"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" style="color: var(--white)"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="juan@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contact" style="color: var(--white)"
+              >WhatsApp Number</label
+            >
+            <input
+              type="tel"
+              id="contact"
+              name="contact"
+              placeholder="+65 9123 4567"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="plan" style="color: var(--white)"
+              >Preferred Plan Duration</label
+            >
+            <select id="plan" name="plan" required>
+              <option value="">Select plan duration</option>
+              <option value="5">5-Year Plan</option>
+              <option value="10">10-Year Plan</option>
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            style="
+              background-color: var(--secondary);
+              color: var(--primary-dark);
+            "
+          >
+            <i class="fas fa-calculator" style="margin-right: 8px"></i>
+            Calculate My Returns
+          </button>
+        </form>
+
+        <div
+          id="resultDisplay"
+          style="
+            display: none;
+            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+          "
+        ></div>
+        <div
+          id="submissionMessage"
+          class="message-container"
+          style="display: none; margin-top: 20px"
+        ></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-accent">
+    <div class="container">
+      <h2>How It Works</h2>
+      <p style="max-width: 700px; margin: 0 auto 40px">
+        Our index-linked portfolio combines the safety of capital protection
+        with the growth potential of market-linked returns.
+      </p>
+
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          gap: 30px;
+          justify-content: center;
+        "
+      >
+        <div style="flex: 1; min-width: 300px; max-width: 500px">
+          <h3 style="color: var(--primary)">Your Money is Protected</h3>
+          <p>
+            At maturity, you get back 100% of your premiums paid, guaranteed.
+            This means:
+          </p>
+          <ul style="padding-left: 20px">
+            <li>No risk of losing your hard-earned money</li>
+            <li>Peace of mind during market crashes</li>
+            <li>Perfect for essential goals like education or retirement</li>
+          </ul>
+        </div>
+
+        <div style="flex: 1; min-width: 300px; max-width: 500px">
+          <h3 style="color: var(--primary)">Plus Growth Potential</h3>
+          <p>When markets perform well, you participate in the gains:</p>
+          <ul style="padding-left: 20px">
+            <li>Returns linked to a basket of stable global indices</li>
+            <li>No need to monitor stocks daily</li>
+            <li>Professional fund managers handle everything</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="max-width: 800px; margin: 50px auto">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Our Plan</th>
+          <th>Regular Savings</th>
+          <th>Stock Market</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Capital Protection</td>
+          <td class="check">✓ 100% Guaranteed + SDIC Protection</td>
+          <td class="cross">SDIC Protection Only</td>
+          <td class="cross">✗ No Protection</td>
+        </tr>
+        <tr>
+          <td>Growth Potential</td>
+          <td class="check">✓ Up to 99.62%</td>
+          <td class="cross">✗ 0.5-1.5%</td>
+          <td class="check">High (Risky)</td>
+        </tr>
+        <tr>
+          <td>Risk Level</td>
+          <td class="check">✓ Low</td>
+          <td class="check">✓ Low</td>
+          <td class="cross">✗ High</td>
+        </tr>
+        <tr>
+          <td>Best For</td>
+          <td class="check">OFW Family Goals</td>
+          <td class="check">Short-term Needs</td>
+          <td class="check">Experienced Investors</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section class="section section-light">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is my money really 100% protected?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Yes, at maturity you are guaranteed to receive back 100% of your
+            total premiums paid, regardless of market performance.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How are the returns calculated?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Returns are based on the performance of a carefully selected
+            basket of global market indices. We use a participation rate to
+            determine how much of the index growth you receive.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What if I need to withdraw early?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Early withdrawals are possible but it will impact the final
+            maturity value, especially in the first few years. We recommend
+            this plan for money you can commit for the full term. For
+            emergency funds, consider keeping those separate.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <h3 style="color: var(--white); margin-bottom: 20px">
+        Have More Questions?
+      </h3>
+      <p>
+        Our Filipino-speaking consultants are ready to help you understand all
+        the details. Message us anytime on WhatsApp.
+      </p>
+      <a
+        href="https://wa.me/6594756001"
+        style="
+          display: inline-flex;
+          background-color: var(--secondary);
+          color: var(--primary-dark);
+          padding: 12px 24px;
+          border-radius: var(--rounded-sm);
+          font-weight: 600;
+          margin-top: 20px;
+        "
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fab fa-whatsapp" style="margin-right: 8px"></i> Chat Now
+      </a>
+
+      <div class="disclaimer">
+        * All facts, figures, and projections shown are estimates only and
+        should not be taken as guaranteed outcomes. Past performance is not
+        indicative of future results.<br /><br />
+        This website has not been reviewed or approved by the Monetary
+        Authority of Singapore (MAS). It is intended for informational and
+        educational purposes only and does not constitute financial advice or
+        a formal offer.
+        <div style="margin-top: 20px">
+          &copy; 2025 Shawn Dabi. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    href="https://wa.me/6594756001"
+    class="floating-cta"
+    target="_blank"
+    rel="noopener"
+  >
+    <i class="fab fa-whatsapp"></i> Start Saving Today
+  </a>
+
+  <script>
+    const endpoint = "https://formspree.io/f/xgvyqeag";
+
+    const taglines = [
+      "Double Your Savings While Minimizing the Risk - Perfect for OFWs",
+      "Your Hard Work Abroad Deserves Smarter Growth at Home",
+      "Capital Protection + Growth Potential = Peace of Mind",
+      "Build Your Family's Future While Working Overseas",
+      "The OFW's Secret to Growing Savings 2X Faster",
+    ];
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Set random tagline
+      const hero = document.querySelector(".hero-pitch");
+      if (hero) {
+        const randomTagline =
+          taglines[Math.floor(Math.random() * taglines.length)];
+        hero.textContent = randomTagline;
+      }
+
+      // Floating CTA behavior
+      const cta = document.querySelector(".floating-cta");
+      window.addEventListener("scroll", () => {
+        cta.classList.toggle("visible", window.scrollY > 100);
+      });
+
+      // Counter animation
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach((counter) => {
+        const updateCount = () => {
+          const target = parseFloat(counter.getAttribute("data-target"));
+          const current =
+            parseFloat(counter.innerText.replace(/,/g, "")) || 0;
+          const increment = target / 100;
+
+          if (current < target) {
+            let newValue = current + increment;
+            if (target > 1000) {
+              counter.innerText = Math.floor(newValue).toLocaleString();
+            } else {
+              counter.innerText = newValue.toFixed(2);
+            }
+            setTimeout(updateCount, 15);
+          } else {
+            counter.innerText = target.toLocaleString(undefined, {
+              minimumFractionDigits: target < 1000 ? 2 : 0,
+              maximumFractionDigits: target < 1000 ? 2 : 0,
+            });
+          }
+        };
+        updateCount();
+      });
+
+      // FAQ toggle functionality
+      const faqQuestions = document.querySelectorAll(".faq-question");
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          const item = question.parentElement;
+          item.classList.toggle("active");
+
+          // Close other open FAQs
+          faqQuestions.forEach((q) => {
+            if (
+              q !== question &&
+              q.parentElement.classList.contains("active")
+            ) {
+              q.parentElement.classList.remove("active");
+            }
+          });
+        });
+      });
+    });
+
+    // Enhanced Form Submission Handler
+    document
+      .getElementById("returnForm")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const resultDisplay = document.getElementById("resultDisplay");
+        const submissionMessage =
+          document.getElementById("submissionMessage");
+        const submitButton = form.querySelector('button[type="submit"]');
+
+        // Disable button and show loading state
+        submitButton.disabled = true;
+        submitButton.innerHTML =
+          '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i> Calculating...';
+        resultDisplay.style.display = "none";
+        submissionMessage.style.display = "none";
+        submissionMessage.className = "message-container";
+
+        const formData = {
+          name: form.name.value,
+          email: form.email.value,
+          contact: form.contact.value,
+          plan: form.plan.value,
+          timestamp: new Date().toISOString(),
+          pageUrl: window.location.href,
+        };
+
+        // --- Perform Calculation and Display Results Immediately ---
+        if (formData.plan === "5") {
+          totalPaid = 1138554;
+          returnValue = 2272796;
+          percentage = 99.62;
+          comparison = `
+  <div style="margin-top: 20px; background: rgba(10, 110, 125, 0.05); padding: 15px; border-radius: var(--rounded-sm); border-left: 3px solid var(--secondary);">
+    <h4 style="margin-top: 0; color: var(--primary);">What This Could Mean:</h4>
+    <ul style="padding-left: 20px; color: var(--text);">
+      <li>🎓 <strong style="color: var(--primary-dark);">Education:</strong> Fully cover 4 years at top Philippine universities</li>
+      <li>🏠 <strong style="color: var(--primary-dark);">Property:</strong> Downpayment for a family home</li>
+      <li>👵 <strong style="color: var(--primary-dark);">Retirement:</strong> ₱25,836.42/month for life (if invested in Semirara Mining (SCC) currently earning ~13.64% Annual Dividend Yield</li>
+    </ul>
+  </div>
+`;
+        } else {
+          totalPaid = 1112076;
+          returnValue = 2061730;
+          percentage = 85.39;
+          comparison = `
+  <div style="margin-top: 20px; background: rgba(10, 110, 125, 0.05); padding: 15px; border-radius: var(--rounded-sm); border-left: 3px solid var(--secondary);">
+    <h4 style="margin-top: 0; color: var(--primary);">What This Could Mean:</h4>
+    <ul style="padding-left: 20px; color: var(--text);">
+      <li>🎓 <strong style="color: var(--primary-dark);">Education:</strong> Fund 3-4 years at private colleges</li>
+      <li>💼 <strong style="color: var(--primary-dark);">Business:</strong> Launch a moderate business with inventory</li>
+      <li>👵 <strong style="color: var(--primary-dark);">Retirement:</strong> ₱23,435.99/month for life (if invested in Semirara Mining (SCC) currently earning ~13.64% Annual Dividend Yield</li>
+    </ul>
+  </div>
+`;
+        }
+
+        resultDisplay.innerHTML = `
+<h3 style="margin-top: 0; color: var(--primary);">Your Personalized Projection</h3>
+<p style="color: var(--text);">Hello <strong>${
+          formData.name
+        }</strong>, based on a <strong>${formData.plan}-Year Plan</strong>:</p>
+
+<div style="display: flex; gap: 20px; margin: 20px 0; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 200px; background: var(--neutral-light); padding: 15px; border-radius: var(--rounded-sm);">
+    <h4 style="margin-top: 0; color: var(--primary);">Total Investment</h4>
+    <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-dark); margin: 0;">₱${totalPaid.toLocaleString()}</p>
+  </div>
+  <div style="flex: 1; min-width: 200px; background: var(--neutral-light); padding: 15px; border-radius: var(--rounded-sm);">
+    <h4 style="margin-top: 0; color: var(--primary);">Projected Value</h4>
+    <p style="font-size: 1.5rem; font-weight: 700; color: var(--primary-dark); margin: 0;">₱${returnValue.toLocaleString()}</p>
+  </div>
+</div>
+
+<div style="text-align: center; margin: 20px 0;">
+  <p style="font-size: 1.2rem; color: var(--text);">Estimated <strong style="color: var(--primary);">${percentage}% return</strong> over ${
+          formData.plan
+        } years</p>
+</div>
+
+${comparison}
+
+<div style="margin-top: 30px; text-align: center;">
+  <a href="https://wa.me/6594756001" style="background-color: var(--secondary); color: var(--primary-dark); padding: 12px 24px; border-radius: var(--rounded-sm); font-weight: 600; display: inline-block;" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Get Your Full Proposal
+  </a>
+</div>
+`;
+        resultDisplay.style.display = "block";
+
+        // --- Send Data to Formspree via AJAX ---
+        fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(formData),
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error("Form submission failed.");
+          })
+          .then((data) => {
+            console.log("Formspree Success:", data);
+            submissionMessage.textContent =
+              "We've received your details! A consultant will contact you shortly with your full personalized plan.";
+            submissionMessage.className = "message-container message-success";
+
+            // Track conversion (you can add Google Analytics or Facebook Pixel here)
+            if (window.fbq) {
+              fbq("track", "Lead");
+            }
+            if (window.gtag) {
+              gtag("event", "conversion", {
+                send_to: "AW-123456789/AbC-D_efGhIJ12KLmnoPQ",
+              });
+            }
+          })
+          .catch((error) => {
+            console.error("Formspree Error:", error);
+            submissionMessage.textContent =
+              "We encountered an issue but your projection is ready. Please contact us directly if you'd like to proceed.";
+            submissionMessage.className = "message-container message-error";
+          })
+          .finally(() => {
+            submitButton.disabled = false;
+            submitButton.innerHTML =
+              '<i class="fas fa-calculator" style="margin-right: 8px;"></i> Calculate My Returns';
+            submissionMessage.style.display = "block";
+
+            // Scroll to results if on mobile
+            if (window.innerWidth < 768) {
+              resultDisplay.scrollIntoView({ behavior: "smooth" });
+            }
+          });
+      });
+    drawCumulativeChart();
+    drawReturnsChart();
+  </script>
+
+  <!-- Load Chart.js first -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Load individual chart config files -->
+  <script src="js/cumulativeChart.js"></script>
+  <script src="js/returnsChart.js"></script>
+  <script src="js/exchangeRateChart.js"></script>
+
+  <!-- Load the main initializer -->
+  <script src="js/main.js"></script>
+</body>
+</html>

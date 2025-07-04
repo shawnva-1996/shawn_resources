@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide: Smart Medical Checkups</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      :root {
+        --primary: #0056b3; /* PRU blue */
+        --secondary: #e67e22; /* Warm orange */
+        --accent: #27ae60; /* Healthy green */
+        --light: #f8f9fa;
+        --dark: #343a40;
+        --soft-blue: #e6f2ff;
+        --soft-green: #e8f5e9;
+        --soft-orange: #fff3e0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+
+      header {
+        background: linear-gradient(135deg, var(--primary), #0077cc);
+        color: white;
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 86, 179, 0.15);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: var(--primary);
+        margin-top: 25px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin-bottom: 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 10px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .benefit-card {
+        background: var(--soft-blue);
+        border-left: 4px solid var(--primary);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+      }
+
+      .savings-card {
+        background: var(--soft-green);
+        border-left: 4px solid var(--accent);
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+      }
+
+      .highlight-box {
+        background: var(--soft-orange);
+        border-left: 4px solid var(--secondary);
+        padding: 20px;
+        margin: 25px 0;
+        border-radius: 8px;
+      }
+
+      .feature-list {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .feature-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+      }
+
+      .feature-list li:before {
+        content: "✓";
+        color: var(--accent);
+        font-weight: bold;
+        margin-right: 10px;
+        font-size: 1.2rem;
+      }
+
+      .package-comparison {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+      }
+
+      .package-comparison th {
+        background-color: var(--primary);
+        color: white;
+        padding: 12px;
+        text-align: left;
+      }
+
+      .package-comparison td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .package-comparison tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      .package-comparison .highlight {
+        background-color: #e6f7ff;
+        font-weight: bold;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--secondary);
+        color: white;
+        padding: 12px 25px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin: 15px 0;
+        transition: all 0.3s ease;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .cta-button:hover {
+        background-color: #d35400;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .step {
+        display: flex;
+        margin-bottom: 20px;
+        align-items: flex-start;
+      }
+
+      .step-number {
+        background-color: var(--primary);
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        flex-shrink: 0;
+      }
+
+      .step-content {
+        flex: 1;
+      }
+
+      .price-comparison {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .price-comparison th,
+      .price-comparison td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .price-comparison th {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .price-comparison .savings {
+        color: var(--accent);
+        font-weight: bold;
+      }
+
+      .tab-container {
+        margin: 30px 0;
+      }
+
+      .tabs {
+        display: flex;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 20px;
+      }
+
+      .tab {
+        padding: 10px 20px;
+        cursor: pointer;
+        background: #f1f1f1;
+        margin-right: 5px;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .tab.active {
+        background: var(--primary);
+        color: white;
+      }
+
+      .tab-content {
+        display: none;
+        padding: 15px;
+        background: white;
+        border-radius: 0 0 5px 5px;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      .testimonial {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border-left: 4px solid var(--secondary);
+      }
+
+      .testimonial-author {
+        font-weight: bold;
+        margin-top: 10px;
+        color: var(--primary);
+      }
+
+      /* Lead Form Styles */
+      #leadForm {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin: 30px auto;
+        max-width: 600px;
+      }
+
+      #leadForm h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: var(--primary);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--dark);
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .form-submit {
+        background-color: var(--secondary);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .form-submit:hover {
+        background-color: #d35400;
+      }
+
+      .form-note {
+        font-size: 14px;
+        color: #666;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .step {
+          flex-direction: column;
+        }
+
+        .step-number {
+          margin-bottom: 10px;
+        }
+
+        .package-comparison,
+        .price-comparison {
+          display: block;
+          overflow-x: auto;
+        }
+
+        #leadForm {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+        <div id="navbar-container"></div>
+    <script src="/js/include-navbar.js"></script>
+    <header>
+      <p class="tagline">
+        Smart medical checkups made simple with your benefits
+      </p>
+    </header>
+
+    <div class="container">
+      <h2>Your 3-Step Guide to Maximizing Medical Checkup Benefits</h2>
+
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Check Your Company Insurance First</h3>
+          <p>
+            Review your employer-provided insurance benefits before booking any
+            checkup.
+          </p>
+          <ul>
+            <li>Contact HR for outpatient screening coverage</li>
+            <li>Check for preferred providers or clinics</li>
+            <li>Find out about any pre-approvals needed</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Compare and Save</h3>
+          <p>Check how much you can save with our partner packages:</p>
+          <table class="price-comparison">
+            <tr>
+              <th>Service</th>
+              <th>Market Price</th>
+              <th>Member Price</th>
+              <th>Your Savings</th>
+            </tr>
+            <tr>
+              <td>Basic Health Screening</td>
+              <td>$120–$180</td>
+              <td>$74.12</td>
+              <td class="savings">Up to $105.88</td>
+            </tr>
+            <tr>
+              <td>Comprehensive Screening</td>
+              <td>$300–$450</td>
+              <td>$270.32</td>
+              <td class="savings">Up to $179.68</td>
+            </tr>
+            <tr>
+              <td>Home Vaccination</td>
+              <td>$150–$250</td>
+              <td>Fully subsidized</td>
+              <td class="savings">100% savings</td>
+            </tr>
+            <tr>
+              <td>Teleconsultation (daytime)</td>
+              <td>$25–$40</td>
+              <td>$13</td>
+              <td class="savings">Up to $27</td>
+            </tr>
+          </table>
+
+          <h4>How to Book</h4>
+          <ol>
+            <li>Log in to your member portal</li>
+            <li>View your health plan details</li>
+            <li>Select "Book Health Screening/Vaccination"</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="highlight-box">
+          <h4>Exclusive Telemedicine Benefits</h4>
+          <ul class="feature-list">
+            <li>Teleconsultation from S$13 (6am–8:59pm)</li>
+            <li>Night consultations from S$28 (9pm–6am)</li>
+            <li>Medication delivered within 3 hours, free</li>
+            <li>Referrals to specialists within 3 working days</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="benefit-card">
+        <h4>Chronic Care Management</h4>
+        <p>Free preventive screenings at 37 clinics:</p>
+        <ul class="feature-list">
+          <li>Blood sugar, pressure, BMI, lipids</li>
+        </ul>
+      </div>
+
+      <div class="benefit-card">
+        <h4>Mental Wellness Support</h4>
+        <p>Free PHQ-9 assessments and access to:</p>
+        <ul class="feature-list">
+          <li>Diabetes & Hypertension Programs</li>
+          <li>Mental Wellness Support</li>
+        </ul>
+      </div>
+
+      <div class="savings-card">
+        <h4>Discounted Health Screenings</h4>
+        <table class="package-comparison">
+          <tr>
+            <th>Package</th>
+            <th>Core</th>
+            <th>Select</th>
+            <th>Elite</th>
+            <th>Prestige</th>
+          </tr>
+          <tr>
+            <td>Clinic Price (S$)</td>
+            <td>$74.12</td>
+            <td>$128.62</td>
+            <td>$172.22</td>
+            <td>$270.32</td>
+          </tr>
+          <tr>
+            <td>Home-Based (S$)</td>
+            <td>$117.72</td>
+            <td>$172.22</td>
+            <td>$215.82</td>
+            <td>$313.92</td>
+          </tr>
+        </table>
+
+        <h5>What's included:</h5>
+        <ul class="feature-list">
+          <li>Teleconsultation with certified GP</li>
+          <li>Full body measurements</li>
+          <li>Glucose, cholesterol, liver & kidney tests</li>
+          <li>Full blood count and ECG (if applicable)</li>
+        </ul>
+
+        <div class="highlight-box">
+          <h4>Family Benefits</h4>
+          <p>Free home-based vaccinations for:</p>
+          <ul class="feature-list">
+            <li>Children (2–18 months)</li>
+            <li>Seniors (65+)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>Enhanced Benefits with HealthPlus Plans</h2>
+      <p>
+        Upgrade to enjoy <strong>free executive screenings</strong> at premium
+        clinics.
+      </p>
+
+      <div class="tab-container">
+        <div class="tabs">
+          <div class="tab active" onclick="openTab('planA')">Women's Plan</div>
+          <div class="tab" onclick="openTab('planB')">Men's Plan</div>
+        </div>
+
+        <div id="planA" class="tab-content active">
+          <h3>Comprehensive Women's Health</h3>
+          <div class="benefit-card">
+            <h4>Package 1</h4>
+            <ul class="feature-list">
+              <li>History, exam, BMI, breast check</li>
+              <li>Vision, urine, blood work</li>
+              <li>Hormones, liver, kidney, bone</li>
+              <li>Pap smear, cancer marker (CA 125)</li>
+              <li>Colon and liver cancer screen (40+)</li>
+            </ul>
+          </div>
+
+          <div class="benefit-card">
+            <h4>Package 2</h4>
+            <p>Includes all Package 1 +</p>
+            <ul class="feature-list">
+              <li>Breast ultrasound or mammogram</li>
+              <li>Pelvic ultrasound</li>
+            </ul>
+          </div>
+
+          <div
+            class="testimonial"
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              gap: 2rem;
+              margin-bottom: 2rem;
+            "
+          >
+            <div style="flex: 1 1 300px; text-align: center">
+              <img
+                src="/images/pruman-testimony.jpg"
+                alt="David Loke Testimonial"
+                style="
+                  width: 100%;
+                  max-width: 300px;
+                  aspect-ratio: 1 / 1;
+                  object-fit: cover;
+                  border-radius: 8px;
+                "
+              />
+            </div>
+            <div style="flex: 2 1 400px">
+              <p>
+                "As an entrepreneur constantly on the move, I nearly overlooked
+                my health. Thanks to PRUMAN’s free executive health screening at
+                Paragon, I discovered early signs of colon cancer. I was able to
+                receive preventive treatment in time—and it genuinely saved my
+                life."
+              </p>
+              <p class="testimonial-author">
+                – David Loke, Entrepreneur & Founder of ReadySpace
+              </p>
+            </div>
+          </div>
+
+          <a href="#leadForm" class="cta-button">Get Details</a>
+        </div>
+
+        <div id="planB" class="tab-content">
+          <h3>Comprehensive Men's Health</h3>
+          <div class="benefit-card">
+            <h4>Package 1</h4>
+            <ul class="feature-list">
+              <li>Full physical exam & consultation</li>
+              <li>BMI, vision, urine, blood work</li>
+              <li>Prostate antigen (PSA), ECG</li>
+              <li>Colon and liver cancer screening (40+)</li>
+            </ul>
+          </div>
+
+          <div class="benefit-card">
+            <h4>Package 2</h4>
+            <p>Includes all Package 1 +</p>
+            <ul class="feature-list">
+              <li>Prostate ultrasound or stress test</li>
+            </ul>
+          </div>
+
+          <div class="testimonial">
+            <p>
+              "The screening helped me take control of my health without
+              worrying about cost."
+            </p>
+            <p class="testimonial-author">– Member Testimonial</p>
+          </div>
+
+          <a href="#leadForm" class="cta-button">Learn More</a>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3>Why Upgrade?</h3>
+        <ul class="feature-list">
+          <li>
+            <strong>Free executive health screenings</strong> (worth $500–$800)
+          </li>
+          <li><strong>Gender-specific comprehensive testing</strong></li>
+          <li><strong>Priority access</strong>&nbsp;to specialists</li>
+          <li><strong>Preventive care</strong>&nbsp;with early detection</li>
+          <li><strong>Time savings</strong>&nbsp;with coordinated care</li>
+        </ul>
+        <a href="#leadForm" class="cta-button">Compare Plan Options</a>
+      </div>
+    </div>
+
+    <div id="leadForm" class="container">
+      <h2>Get Your Personalised Health Screening Advice</h2>
+      <p>Submit this form and our advisor will contact you within 24 hours.</p>
+
+      <form action="https://formspree.io/f/xgvyqeag" method="POST">
+        <div class="form-group">
+          <label for="name">Full Name*</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address*</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Contact Number*</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="interest">I'm interested in:</label>
+          <select id="interest" name="interest">
+            <option value="shield">HealthPlus Shield</option>
+            <option value="women">Women's Wellness Plan</option>
+            <option value="men">Men's Wellness Plan</option>
+            <option value="all">All Options</option>
+          </select>
+        </div>
+        <button type="submit" class="form-submit">Get Advice Now</button>
+        <p class="form-note">
+          Your information will only be used to contact you about health
+          screening options.
+        </p>
+      </form>
+    </div>
+
+    <script>
+      function openTab(tabName) {
+        document
+          .querySelectorAll(".tab-content")
+          .forEach((content) => content.classList.remove("active"));
+        document
+          .querySelectorAll(".tab")
+          .forEach((tab) => tab.classList.remove("active"));
+        document.getElementById(tabName).classList.add("active");
+        event.currentTarget.classList.add("active");
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document
+            .querySelector(this.getAttribute("href"))
+            .scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    </script>
+  </body>
+</html>

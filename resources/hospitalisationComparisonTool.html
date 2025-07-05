@@ -1,696 +1,591 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PRUShield Plus vs Competitors Comparison</title>
-    <link rel="stylesheet" href="../css/styles.css" />
-  </head>
-  <div id="navbar-container"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company P Shield Plus vs Competitors Comparison</title>
+     <link rel="stylesheet" href="../css/styles.css">
+</head>
+    <div id="navbar-container"></div>
   <script src="/js/include-navbar.js"></script>
-  <body>
-    <h1>PRUShield Plus vs Competitors Comparison</h1>
-
+<body>
+    <h1>Company P Shield Plus vs Competitors Comparison</h1>
+    
     <div class="company-selector">
-      <label for="competitor-select">Compare PRUShield Plus with:</label>
-      <select id="competitor-select">
-        <option value="G">Company G (Plan A Plus)</option>
-        <option value="A">Company A (Plan B)</option>
-        <option value="I" selected>Company I (Plan Ad)</option>
-        <option value="S">Company S (Plan 2)</option>
-        <option value="H">Company H (Plan B)</option>
-        <option value="R">Company R (Plan A)</option>
-      </select>
-      <button onclick="updateComparison()">Compare</button>
+        <label for="competitor-select">Compare Company P Shield Plus with:</label>
+        <select id="competitor-select">
+            <option value="G">Company G (Plan A Plus)</option>
+            <option value="A">Company A (Plan B)</option>
+            <option value="I" selected>Company I (Plan Ad)</option>
+            <option value="S">Company S (Plan 2)</option>
+            <option value="H">Company H (Plan B)</option>
+            <option value="R">Company R (Plan A)</option>
+        </select>
+        <button onclick="updateComparison()">Compare</button>
     </div>
-
+    
     <div class="tabs">
-      <div class="tab active" onclick="switchTab('summary')">
-        Key Advantages
-      </div>
-      <div class="tab" onclick="switchTab('detailed')">Detailed Comparison</div>
-      <div class="tab" onclick="switchTab('conclusion')">Conclusion</div>
+        <div class="tab active" onclick="switchTab('summary')">Key Advantages</div>
+        <div class="tab" onclick="switchTab('detailed')">Detailed Comparison</div>
+        <div class="tab" onclick="switchTab('conclusion')">Conclusion</div>
     </div>
-
+    
     <div id="summary" class="tab-content active">
-      <div class="highlight-box">
-        <div class="highlight-title" id="summary-title">
-          Why PRUShield Plus Stands Out Against Company I
+        <div class="highlight-box">
+            <div class="highlight-title" id="summary-title">Why Company P Shield Plus Stands Out Against Company I</div>
+            <p>Company P Shield Plus offers superior coverage in several critical areas that make it the better choice for comprehensive health protection.</p>
         </div>
-        <p>
-          PRUShield Plus offers superior coverage in several critical areas that
-          make it the better choice for comprehensive health protection.
-        </p>
-      </div>
-
-      <h2>Key Advantages of PRUShield Plus</h2>
-
-      <table id="summary-table">
-        <tr>
-          <th>Feature</th>
-          <th>PRUShield Plus</th>
-          <th id="comp-name">Company I</th>
-          <th>Advantage</th>
-        </tr>
-        <!-- Table will be populated by JavaScript -->
-      </table>
-
-      <div class="highlight-box" id="top-reasons">
-        <div class="highlight-title">Top Reasons to Choose PRUShield Plus</div>
-        <ol id="reasons-list">
-          <!-- List will be populated by JavaScript -->
-        </ol>
-      </div>
+        
+        <h2>Key Advantages of Company P Shield Plus</h2>
+        
+        <table id="summary-table">
+            <tr>
+                <th>Feature</th>
+                <th>Company P Shield Plus</th>
+                <th id="comp-name">Company I</th>
+                <th>Advantage</th>
+            </tr>
+            <!-- Table will be populated by JavaScript -->
+        </table>
+        
+        <div class="highlight-box" id="top-reasons">
+            <div class="highlight-title">Top Reasons to Choose Company P Shield Plus</div>
+            <ol id="reasons-list">
+                <!-- List will be populated by JavaScript -->
+            </ol>
+        </div>
     </div>
-
+    
     <div id="detailed" class="tab-content">
-      <h2 id="detailed-title">
-        Detailed Feature Comparison: PRUShield Plus vs Company I
-      </h2>
-
-      <div class="comparison-container" id="detailed-comparison">
-        <!-- Content will be populated by JavaScript -->
-      </div>
+        <h2 id="detailed-title">Detailed Feature Comparison: Company P Shield Plus vs Company I</h2>
+        
+        <div class="comparison-container" id="detailed-comparison">
+            <!-- Content will be populated by JavaScript -->
+        </div>
     </div>
-
+    
     <div id="conclusion" class="tab-content">
-      <div class="conclusion" id="conclusion-content">
-        <!-- Content will be populated by JavaScript -->
-      </div>
+        <div class="conclusion" id="conclusion-content">
+            <!-- Content will be populated by JavaScript -->
+        </div>
     </div>
-
+    
     <script>
-      // Data for all companies
-      const companyData = {
-        G: {
-          name: "Company G (Plan A Plus)",
-          features: {
-            basic: {
-              planName: "Base plan A Plus",
-              coverageType: "As Charged",
-              minEntryAge: "1 ANB",
-              maxEntryAge: "75 ANB",
-              coverageTerm: "Lifetime",
-              premiumTerm: "Lifetime",
+        // Data for all companies
+        const companyData = {
+            "G": {
+                name: "Company G (Plan A Plus)",
+                features: {
+                    basic: {
+                        planName: "Base plan A Plus",
+                        coverageType: "As Charged",
+                        minEntryAge: "1 ANB",
+                        maxEntryAge: "75 ANB",
+                        coverageTerm: "Lifetime",
+                        premiumTerm: "Lifetime"
+                    },
+                    inpatient: {
+                        normalWard: "As Charged",
+                        icu: "As Charged",
+                        communityHospital: "As Charged",
+                        accidentDental: "As Charged",
+                        palliativeGeneral: "As Charged",
+                        palliativeSpecial: "$560/day",
+                        psychiatric: "$4,500 per policy year"
+                    },
+                    surgical: {
+                        surgery: "As Charged (TOSP Table 1-7)",
+                        organTransplant: "As Charged (limited to kidney(s), heart, liver, cornea(s), skin, pancreas and musculoskeletal tissue)",
+                        stemCell: "As Charged",
+                        breastReconstruction: "As Charged within 365 days from date of the first Mastectomy"
+                    },
+                    organDonor: {
+                        asDonor: "$40,000 per transplant (waiting period: 730 days)",
+                        asRecipient: "Not Available"
+                    },
+                    overseas: {
+                        emergency: "As Charged limited to Singapore Restructured Hospitals, class A ward's charges",
+                        planned: "Not Available"
+                    },
+                    prePostHospital: {
+                        pre: "180 days before admission/day surgery",
+                        post: "365 days after discharge/day surgery",
+                        hyperbaric: "Not Available"
+                    },
+                    outpatient: {
+                        immunosuppressant: "As Charged",
+                        cancerDrugMonth: "5x MediShield Life limit",
+                        cancerDrugYear: "5x MediShield Life limit",
+                        renalFailure: "As Charged"
+                    },
+                    other: {
+                        cellTherapy: "$150,000 per policy year",
+                        protonTherapy: "$60,000 per policy year",
+                        finalExpense: "$6,000",
+                        congenitalChild: "$16,000 per lifetime of life assured (limited to $4,000 per child)"
+                    },
+                    limits: {
+                        policyYear: "$1,000,000",
+                        lifetime: "Unlimited",
+                        refresh: "Not Available"
+                    }
+                },
+                advantages: [
+                    "Higher psychiatric coverage ($7,000 vs $4,500 per policy year)",
+                    "Higher cell tissue and gene therapy coverage ($250,000 vs $150,000)",
+                    "Higher proton beam therapy coverage ($100,000 vs $60,000)",
+                    "Coverage for life assured as organ recipient (not available with Company G)"
+                ]
             },
-            inpatient: {
-              normalWard: "As Charged",
-              icu: "As Charged",
-              communityHospital: "As Charged",
-              accidentDental: "As Charged",
-              palliativeGeneral: "As Charged",
-              palliativeSpecial: "$560/day",
-              psychiatric: "$4,500 per policy year",
+            "A": {
+                name: "Company A (Plan B)",
+                features: {
+                    basic: {
+                        planName: "Base plan B",
+                        coverageType: "As Charged",
+                        minEntryAge: "2 weeks",
+                        maxEntryAge: "75 ANB",
+                        coverageTerm: "Lifetime",
+                        premiumTerm: "Lifetime"
+                    },
+                    inpatient: {
+                        normalWard: "As Charged",
+                        icu: "As Charged",
+                        communityHospital: "As Charged up to 90 days per hospitalisation",
+                        accidentDental: "As Charged",
+                        palliativeGeneral: "As Charged",
+                        palliativeSpecial: "As Charged",
+                        psychiatric: "$4,000 per policy year"
+                    },
+                    surgical: {
+                        surgery: "As Charged (TOSP Table 1-7)",
+                        organTransplant: "As Charged (limited to cornea, kidney, heart, liver, lung, skin or musculoskeletal tissue)",
+                        stemCell: "As Charged",
+                        breastReconstruction: "As Charged if medically necessary"
+                    },
+                    organDonor: {
+                        asDonor: "$40,000 per transplant (waiting period: 24 months)",
+                        asRecipient: "Not Available"
+                    },
+                    overseas: {
+                        emergency: "As Charged Limited to hospitalisation and surgical benefits, surgical benefit, pre- and post-hospitalisation benefit",
+                        planned: "Not Available"
+                    },
+                    prePostHospital: {
+                        pre: "180 days before admission",
+                        post: "180 days after discharged",
+                        hyperbaric: "Not Available"
+                    },
+                    outpatient: {
+                        immunosuppressant: "Private hospital: $7,200 per policy year | Restructured hospital: As Charged",
+                        cancerDrugMonth: "5x MediShield Life limit",
+                        cancerDrugYear: "5x MediShield Life limit",
+                        renalFailure: "As Charged"
+                    },
+                    other: {
+                        cellTherapy: "$250,000 per policy year",
+                        protonTherapy: "$100,000 per policy year",
+                        finalExpense: "$3,500",
+                        congenitalChild: "$16,000 per lifetime of female life assured (limited to $4,000 per child)"
+                    },
+                    limits: {
+                        policyYear: "$1,000,000",
+                        lifetime: "Unlimited",
+                        refresh: "Not Available"
+                    }
+                },
+                advantages: [
+                    "Higher psychiatric coverage ($7,000 vs $4,000 per policy year)",
+                    "Longer post-hospitalisation coverage (365 days vs 180 days)",
+                    "Higher final expense provision ($3,500 vs $3,000)",
+                    "Coverage for post-hospitalisation hyperbaric oxygen therapy ($5,000/year - not available with Company A)"
+                ]
             },
-            surgical: {
-              surgery: "As Charged (TOSP Table 1-7)",
-              organTransplant:
-                "As Charged (limited to kidney(s), heart, liver, cornea(s), skin, pancreas and musculoskeletal tissue)",
-              stemCell: "As Charged",
-              breastReconstruction:
-                "As Charged within 365 days from date of the first Mastectomy",
+            "I": {
+                name: "Company I (Plan Ad)",
+                features: {
+                    basic: {
+                        planName: "Base plan Ad",
+                        coverageType: "As Charged",
+                        minEntryAge: "1 ANB",
+                        maxEntryAge: "75 ANB",
+                        coverageTerm: "Lifetime",
+                        premiumTerm: "Lifetime"
+                    },
+                    inpatient: {
+                        normalWard: "As Charged",
+                        icu: "As Charged",
+                        communityHospital: "As Charged up to 45 days per hospitalisation",
+                        accidentDental: "As Charged",
+                        palliativeGeneral: "As Charged",
+                        palliativeSpecial: "$560/day",
+                        psychiatric: "$4,000 per policy year"
+                    },
+                    surgical: {
+                        surgery: "As Charged (TOSP Table 1-7)",
+                        organTransplant: "As Charged",
+                        stemCell: "As Charged",
+                        breastReconstruction: "As Charged within 365 days from the date life assured leaves the hospital where the mastectomy was done"
+                    },
+                    organDonor: {
+                        asDonor: "$40,000 per transplant (waiting period: 24 months)",
+                        asRecipient: "Not Available"
+                    },
+                    overseas: {
+                        emergency: "As Charged limited to Singapore Restructured hospital's charges",
+                        planned: "Not Available"
+                    },
+                    prePostHospital: {
+                        pre: "100 days before admission",
+                        post: "100 days after discharged",
+                        hyperbaric: "Not Available"
+                    },
+                    outpatient: {
+                        immunosuppressant: "As Charged",
+                        cancerDrugMonth: "4x MediShield Life limit",
+                        cancerDrugYear: "4x MediShield Life limit",
+                        renalFailure: "As Charged"
+                    },
+                    other: {
+                        cellTherapy: "$250,000 per policy year",
+                        protonTherapy: "$100,000 per policy year",
+                        finalExpense: "$5,000",
+                        congenitalChild: "Not Available"
+                    },
+                    limits: {
+                        policyYear: "$500,000",
+                        lifetime: "Unlimited",
+                        refresh: "Not Available"
+                    }
+                },
+                advantages: [
+                    "Higher psychiatric coverage ($7,000 vs $4,000 per policy year)",
+                    "Longer pre/post-hospitalisation coverage (180/365 days vs 100/100 days)",
+                    "Higher policy year limit ($1M vs $500k)",
+                    "Coverage for congenital abnormalities of biological child (not available with Company I)"
+                ]
             },
-            organDonor: {
-              asDonor: "$40,000 per transplant (waiting period: 730 days)",
-              asRecipient: "Not Available",
+            "S": {
+                name: "Company S (Plan 2)",
+                features: {
+                    basic: {
+                        planName: "Base plan 2",
+                        coverageType: "As Charged",
+                        minEntryAge: "1 ANB",
+                        maxEntryAge: "75 ANB",
+                        coverageTerm: "Lifetime",
+                        premiumTerm: "Lifetime"
+                    },
+                    inpatient: {
+                        normalWard: "As Charged",
+                        icu: "As Charged",
+                        communityHospital: "As Charged up to 45 days per hospitalisation",
+                        accidentDental: "As Charged",
+                        palliativeGeneral: "As Charged",
+                        palliativeSpecial: "As Charged",
+                        psychiatric: "$10,000 per policy year up to 45 days per policy year"
+                    },
+                    surgical: {
+                        surgery: "As Charged (TOSP Table 1-7)",
+                        organTransplant: "As Charged limited to cornea, kidney, heart, liver, lung, skin and musculoskeletal tissue",
+                        stemCell: "As Charged",
+                        breastReconstruction: "Covered within 365 days after the mastectomy was done"
+                    },
+                    organDonor: {
+                        asDonor: "$30,000 per lifetime (waiting period: 24 months)",
+                        asRecipient: "$40,000 per transplant (waiting period: 730 days)"
+                    },
+                    overseas: {
+                        emergency: "As Charged limited to Singapore Restructured hospital's charges",
+                        planned: "Not Available"
+                    },
+                    prePostHospital: {
+                        pre: "90 days before admission [for non-panel specialist in a private hospital] or 180 days before admission [for A&E and preferred medical providers]",
+                        post: "180 days after discharged [for non-panel specialist in a private hospital] or 365 days after discharged [for A&E and preferred medical providers]",
+                        hyperbaric: "Not Available"
+                    },
+                    outpatient: {
+                        immunosuppressant: "As Charged",
+                        cancerDrugMonth: "5x MediShield Life limit",
+                        cancerDrugYear: "5x MediShield Life limit",
+                        renalFailure: "As Charged"
+                    },
+                    other: {
+                        cellTherapy: "$150,000 per policy year (inpatient and outpatient)",
+                        protonTherapy: "$70,000 per policy year",
+                        finalExpense: "$10,000",
+                        congenitalChild: "Not Available"
+                    },
+                    limits: {
+                        policyYear: "$1,000,000",
+                        lifetime: "Unlimited",
+                        refresh: "Not Available"
+                    }
+                },
+                advantages: [
+                    "No day limit for community hospital stays (vs 45 days with Company S)",
+                    "Higher cell tissue and gene therapy coverage ($250,000 vs $150,000)",
+                    "Higher proton beam therapy coverage ($100,000 vs $70,000)",
+                    "Coverage for planned overseas treatment (not available with Company S)"
+                ]
             },
-            overseas: {
-              emergency:
-                "As Charged limited to Singapore Restructured Hospitals, class A ward's charges",
-              planned: "Not Available",
+            "H": {
+                name: "Company H (Plan B)",
+                features: {
+                    basic: {
+                        planName: "Base plan B",
+                        coverageType: "As Charged",
+                        minEntryAge: "15 days",
+                        maxEntryAge: "75 ANB",
+                        coverageTerm: "Lifetime",
+                        premiumTerm: "Lifetime"
+                    },
+                    inpatient: {
+                        normalWard: "As Charged",
+                        icu: "As Charged",
+                        communityHospital: "As Charged up to 60 days per policy year",
+                        accidentDental: "As Charged",
+                        palliativeGeneral: "As Charged",
+                        palliativeSpecial: "As Charged",
+                        psychiatric: "$4,000 up to 60 days per policy year"
+                    },
+                    surgical: {
+                        surgery: "As Charged (TOSP Table 1-7)",
+                        organTransplant: "As Charged limited to cornea, kidneys, heart, liver, lung or bone marrow",
+                        stemCell: "As Charged",
+                        breastReconstruction: "Covered Must be due to breast cancer, within 365 days from mastectomy, breast implant is covered"
+                    },
+                    organDonor: {
+                        asDonor: "$40,000 per transplant (waiting period: 730 days)",
+                        asRecipient: "$40,000 per transplant"
+                    },
+                    overseas: {
+                        emergency: "As Charged limited to Singapore Restructured hospital's charges",
+                        planned: "Not Available"
+                    },
+                    prePostHospital: {
+                        pre: "180 days before admission",
+                        post: "365 days after discharged",
+                        hyperbaric: "Not Available"
+                    },
+                    outpatient: {
+                        immunosuppressant: "As Charged",
+                        cancerDrugMonth: "5x MediShield Life limit",
+                        cancerDrugYear: "5x MediShield Life limit",
+                        renalFailure: "As Charged"
+                    },
+                    other: {
+                        cellTherapy: "$100,000 per policy year",
+                        protonTherapy: "$50,000 per policy year",
+                        finalExpense: "Not Available",
+                        congenitalChild: "Not Available"
+                    },
+                    limits: {
+                        policyYear: "$1,000,000",
+                        lifetime: "Unlimited",
+                        refresh: "Not Available"
+                    }
+                },
+                advantages: [
+                    "Higher psychiatric coverage ($7,000 vs $4,000 per policy year)",
+                    "Higher cell tissue and gene therapy coverage ($250,000 vs $100,000)",
+                    "Higher proton beam therapy coverage ($100,000 vs $50,000)",
+                    "Final expense provision ($3,000 - not available with Company H)"
+                ]
             },
-            prePostHospital: {
-              pre: "180 days before admission/day surgery",
-              post: "365 days after discharge/day surgery",
-              hyperbaric: "Not Available",
-            },
-            outpatient: {
-              immunosuppressant: "As Charged",
-              cancerDrugMonth: "5x MediShield Life limit",
-              cancerDrugYear: "5x MediShield Life limit",
-              renalFailure: "As Charged",
-            },
-            other: {
-              cellTherapy: "$150,000 per policy year",
-              protonTherapy: "$60,000 per policy year",
-              finalExpense: "$6,000",
-              congenitalChild:
-                "$16,000 per lifetime of life assured (limited to $4,000 per child)",
-            },
-            limits: {
-              policyYear: "$1,000,000",
-              lifetime: "Unlimited",
-              refresh: "Not Available",
-            },
-          },
-          advantages: [
-            "Higher psychiatric coverage ($7,000 vs $4,500 per policy year)",
-            "Higher cell tissue and gene therapy coverage ($250,000 vs $150,000)",
-            "Higher proton beam therapy coverage ($100,000 vs $60,000)",
-            "Coverage for life assured as organ recipient (not available with Company G)",
-          ],
-        },
-        A: {
-          name: "Company A (Plan B)",
-          features: {
-            basic: {
-              planName: "Base plan B",
-              coverageType: "As Charged",
-              minEntryAge: "2 weeks",
-              maxEntryAge: "75 ANB",
-              coverageTerm: "Lifetime",
-              premiumTerm: "Lifetime",
-            },
-            inpatient: {
-              normalWard: "As Charged",
-              icu: "As Charged",
-              communityHospital: "As Charged up to 90 days per hospitalisation",
-              accidentDental: "As Charged",
-              palliativeGeneral: "As Charged",
-              palliativeSpecial: "As Charged",
-              psychiatric: "$4,000 per policy year",
-            },
-            surgical: {
-              surgery: "As Charged (TOSP Table 1-7)",
-              organTransplant:
-                "As Charged (limited to cornea, kidney, heart, liver, lung, skin or musculoskeletal tissue)",
-              stemCell: "As Charged",
-              breastReconstruction: "As Charged if medically necessary",
-            },
-            organDonor: {
-              asDonor: "$40,000 per transplant (waiting period: 24 months)",
-              asRecipient: "Not Available",
-            },
-            overseas: {
-              emergency:
-                "As Charged Limited to hospitalisation and surgical benefits, surgical benefit, pre- and post-hospitalisation benefit",
-              planned: "Not Available",
-            },
-            prePostHospital: {
-              pre: "180 days before admission",
-              post: "180 days after discharged",
-              hyperbaric: "Not Available",
-            },
-            outpatient: {
-              immunosuppressant:
-                "Private hospital: $7,200 per policy year | Restructured hospital: As Charged",
-              cancerDrugMonth: "5x MediShield Life limit",
-              cancerDrugYear: "5x MediShield Life limit",
-              renalFailure: "As Charged",
-            },
-            other: {
-              cellTherapy: "$250,000 per policy year",
-              protonTherapy: "$100,000 per policy year",
-              finalExpense: "$3,500",
-              congenitalChild:
-                "$16,000 per lifetime of female life assured (limited to $4,000 per child)",
-            },
-            limits: {
-              policyYear: "$1,000,000",
-              lifetime: "Unlimited",
-              refresh: "Not Available",
-            },
-          },
-          advantages: [
-            "Higher psychiatric coverage ($7,000 vs $4,000 per policy year)",
-            "Longer post-hospitalisation coverage (365 days vs 180 days)",
-            "Higher final expense provision ($3,500 vs $3,000)",
-            "Coverage for post-hospitalisation hyperbaric oxygen therapy ($5,000/year - not available with Company A)",
-          ],
-        },
-        I: {
-          name: "Company I (Plan Ad)",
-          features: {
-            basic: {
-              planName: "Base plan Ad",
-              coverageType: "As Charged",
-              minEntryAge: "1 ANB",
-              maxEntryAge: "75 ANB",
-              coverageTerm: "Lifetime",
-              premiumTerm: "Lifetime",
-            },
-            inpatient: {
-              normalWard: "As Charged",
-              icu: "As Charged",
-              communityHospital: "As Charged up to 45 days per hospitalisation",
-              accidentDental: "As Charged",
-              palliativeGeneral: "As Charged",
-              palliativeSpecial: "$560/day",
-              psychiatric: "$4,000 per policy year",
-            },
-            surgical: {
-              surgery: "As Charged (TOSP Table 1-7)",
-              organTransplant: "As Charged",
-              stemCell: "As Charged",
-              breastReconstruction:
-                "As Charged within 365 days from the date life assured leaves the hospital where the mastectomy was done",
-            },
-            organDonor: {
-              asDonor: "$40,000 per transplant (waiting period: 24 months)",
-              asRecipient: "Not Available",
-            },
-            overseas: {
-              emergency:
-                "As Charged limited to Singapore Restructured hospital's charges",
-              planned: "Not Available",
-            },
-            prePostHospital: {
-              pre: "100 days before admission",
-              post: "100 days after discharged",
-              hyperbaric: "Not Available",
-            },
-            outpatient: {
-              immunosuppressant: "As Charged",
-              cancerDrugMonth: "4x MediShield Life limit",
-              cancerDrugYear: "4x MediShield Life limit",
-              renalFailure: "As Charged",
-            },
-            other: {
-              cellTherapy: "$250,000 per policy year",
-              protonTherapy: "$100,000 per policy year",
-              finalExpense: "$5,000",
-              congenitalChild: "Not Available",
-            },
-            limits: {
-              policyYear: "$500,000",
-              lifetime: "Unlimited",
-              refresh: "Not Available",
-            },
-          },
-          advantages: [
-            "Higher psychiatric coverage ($7,000 vs $4,000 per policy year)",
-            "Longer pre/post-hospitalisation coverage (180/365 days vs 100/100 days)",
-            "Higher policy year limit ($1M vs $500k)",
-            "Coverage for congenital abnormalities of biological child (not available with Company I)",
-          ],
-        },
-        S: {
-          name: "Company S (Plan 2)",
-          features: {
-            basic: {
-              planName: "Base plan 2",
-              coverageType: "As Charged",
-              minEntryAge: "1 ANB",
-              maxEntryAge: "75 ANB",
-              coverageTerm: "Lifetime",
-              premiumTerm: "Lifetime",
-            },
-            inpatient: {
-              normalWard: "As Charged",
-              icu: "As Charged",
-              communityHospital: "As Charged up to 45 days per hospitalisation",
-              accidentDental: "As Charged",
-              palliativeGeneral: "As Charged",
-              palliativeSpecial: "As Charged",
-              psychiatric:
-                "$10,000 per policy year up to 45 days per policy year",
-            },
-            surgical: {
-              surgery: "As Charged (TOSP Table 1-7)",
-              organTransplant:
-                "As Charged limited to cornea, kidney, heart, liver, lung, skin and musculoskeletal tissue",
-              stemCell: "As Charged",
-              breastReconstruction:
-                "Covered within 365 days after the mastectomy was done",
-            },
-            organDonor: {
-              asDonor: "$30,000 per lifetime (waiting period: 24 months)",
-              asRecipient: "$40,000 per transplant (waiting period: 730 days)",
-            },
-            overseas: {
-              emergency:
-                "As Charged limited to Singapore Restructured hospital's charges",
-              planned: "Not Available",
-            },
-            prePostHospital: {
-              pre: "90 days before admission [for non-panel specialist in a private hospital] or 180 days before admission [for A&E and preferred medical providers]",
-              post: "180 days after discharged [for non-panel specialist in a private hospital] or 365 days after discharged [for A&E and preferred medical providers]",
-              hyperbaric: "Not Available",
-            },
-            outpatient: {
-              immunosuppressant: "As Charged",
-              cancerDrugMonth: "5x MediShield Life limit",
-              cancerDrugYear: "5x MediShield Life limit",
-              renalFailure: "As Charged",
-            },
-            other: {
-              cellTherapy:
-                "$150,000 per policy year (inpatient and outpatient)",
-              protonTherapy: "$70,000 per policy year",
-              finalExpense: "$10,000",
-              congenitalChild: "Not Available",
-            },
-            limits: {
-              policyYear: "$1,000,000",
-              lifetime: "Unlimited",
-              refresh: "Not Available",
-            },
-          },
-          advantages: [
-            "No day limit for community hospital stays (vs 45 days with Company S)",
-            "Higher cell tissue and gene therapy coverage ($250,000 vs $150,000)",
-            "Higher proton beam therapy coverage ($100,000 vs $70,000)",
-            "Coverage for planned overseas treatment (not available with Company S)",
-          ],
-        },
-        H: {
-          name: "Company H (Plan B)",
-          features: {
-            basic: {
-              planName: "Base plan B",
-              coverageType: "As Charged",
-              minEntryAge: "15 days",
-              maxEntryAge: "75 ANB",
-              coverageTerm: "Lifetime",
-              premiumTerm: "Lifetime",
-            },
-            inpatient: {
-              normalWard: "As Charged",
-              icu: "As Charged",
-              communityHospital: "As Charged up to 60 days per policy year",
-              accidentDental: "As Charged",
-              palliativeGeneral: "As Charged",
-              palliativeSpecial: "As Charged",
-              psychiatric: "$4,000 up to 60 days per policy year",
-            },
-            surgical: {
-              surgery: "As Charged (TOSP Table 1-7)",
-              organTransplant:
-                "As Charged limited to cornea, kidneys, heart, liver, lung or bone marrow",
-              stemCell: "As Charged",
-              breastReconstruction:
-                "Covered Must be due to breast cancer, within 365 days from mastectomy, breast implant is covered",
-            },
-            organDonor: {
-              asDonor: "$40,000 per transplant (waiting period: 730 days)",
-              asRecipient: "$40,000 per transplant",
-            },
-            overseas: {
-              emergency:
-                "As Charged limited to Singapore Restructured hospital's charges",
-              planned: "Not Available",
-            },
-            prePostHospital: {
-              pre: "180 days before admission",
-              post: "365 days after discharged",
-              hyperbaric: "Not Available",
-            },
-            outpatient: {
-              immunosuppressant: "As Charged",
-              cancerDrugMonth: "5x MediShield Life limit",
-              cancerDrugYear: "5x MediShield Life limit",
-              renalFailure: "As Charged",
-            },
-            other: {
-              cellTherapy: "$100,000 per policy year",
-              protonTherapy: "$50,000 per policy year",
-              finalExpense: "Not Available",
-              congenitalChild: "Not Available",
-            },
-            limits: {
-              policyYear: "$1,000,000",
-              lifetime: "Unlimited",
-              refresh: "Not Available",
-            },
-          },
-          advantages: [
-            "Higher psychiatric coverage ($7,000 vs $4,000 per policy year)",
-            "Higher cell tissue and gene therapy coverage ($250,000 vs $100,000)",
-            "Higher proton beam therapy coverage ($100,000 vs $50,000)",
-            "Final expense provision ($3,000 - not available with Company H)",
-          ],
-        },
-        R: {
-          name: "Company R (Plan A)",
-          features: {
-            basic: {
-              planName: "Base plan A",
-              coverageType: "As Charged",
-              minEntryAge: "1 ANB",
-              maxEntryAge: "75 ANB",
-              coverageTerm: "Lifetime",
-              premiumTerm: "Lifetime",
-            },
-            inpatient: {
-              normalWard: "As Charged",
-              icu: "As Charged",
-              communityHospital: "As Charged up to 90 days after discharged",
-              accidentDental: "As Charged",
-              palliativeGeneral: "As Charged",
-              palliativeSpecial: "As Charged",
-              psychiatric: "$6,000 per policy year",
-            },
-            surgical: {
-              surgery: "As Charged (TOSP Table 1-7)",
-              organTransplant:
-                "As Charged limited to kidney(s), heart, liver, lung, cornea(s), bone marrow, skin and musculoskeletal tissue",
-              stemCell: "As Charged",
-              breastReconstruction:
-                "As Charged *mastectomy must be due to cancer, and breast cancer reconstruction must be done within 12 months from original mastectomy",
-            },
-            organDonor: {
-              asDonor: "$40,000 per transplant (waiting period: 24 months)",
-              asRecipient: "Not Available",
-            },
-            overseas: {
-              emergency:
-                "As Charged limited to Singapore Restructured hospital, class A ward's charges",
-              planned: "Not Available",
-            },
-            prePostHospital: {
-              pre: "180 days if treatment provided by Co.R's Panel Specialist, Extended Panel Specialist or restructured hospital; or 90 days if treatment provided in other private hospitals",
-              post: "365 days if treatment provided by Co.R's Panel Specialist, Extended Panel Specialist or restructured hospital; or 180 days if treatment provided in other private hospitals",
-              hyperbaric: "Not Available",
-            },
-            outpatient: {
-              immunosuppressant: "As Charged",
-              cancerDrugMonth: "5x MediShield Life limit",
-              cancerDrugYear: "5x MediShield Life limit",
-              renalFailure: "As Charged",
-            },
-            other: {
-              cellTherapy: "$50,000 per policy year",
-              protonTherapy: "$75,000 per policy year",
-              finalExpense: "$4,000",
-              congenitalChild:
-                "$20,000 per lifetime of female life assured (limited to $4,000 per child)",
-            },
-            limits: {
-              policyYear: "$600,000",
-              lifetime: "Unlimited",
-              refresh: "Not Available",
-            },
-          },
-          advantages: [
-            "Higher policy year limit ($1M vs $600k)",
-            "Higher cell tissue and gene therapy coverage ($250,000 vs $50,000)",
-            "Refresh benefit of $1,000,000 (not available with Company R)",
-            "Coverage for post-hospitalisation hyperbaric oxygen therapy ($5,000/year - not available with Company R)",
-          ],
-        },
-      };
+            "R": {
+                name: "Company R (Plan A)",
+                features: {
+                    basic: {
+                        planName: "Base plan A",
+                        coverageType: "As Charged",
+                        minEntryAge: "1 ANB",
+                        maxEntryAge: "75 ANB",
+                        coverageTerm: "Lifetime",
+                        premiumTerm: "Lifetime"
+                    },
+                    inpatient: {
+                        normalWard: "As Charged",
+                        icu: "As Charged",
+                        communityHospital: "As Charged up to 90 days after discharged",
+                        accidentDental: "As Charged",
+                        palliativeGeneral: "As Charged",
+                        palliativeSpecial: "As Charged",
+                        psychiatric: "$6,000 per policy year"
+                    },
+                    surgical: {
+                        surgery: "As Charged (TOSP Table 1-7)",
+                        organTransplant: "As Charged limited to kidney(s), heart, liver, lung, cornea(s), bone marrow, skin and musculoskeletal tissue",
+                        stemCell: "As Charged",
+                        breastReconstruction: "As Charged *mastectomy must be due to cancer, and breast cancer reconstruction must be done within 12 months from original mastectomy"
+                    },
+                    organDonor: {
+                        asDonor: "$40,000 per transplant (waiting period: 24 months)",
+                        asRecipient: "Not Available"
+                    },
+                    overseas: {
+                        emergency: "As Charged limited to Singapore Restructured hospital, class A ward's charges",
+                        planned: "Not Available"
+                    },
+                    prePostHospital: {
+                        pre: "180 days if treatment provided by Co.R's Panel Specialist, Extended Panel Specialist or restructured hospital; or 90 days if treatment provided in other private hospitals",
+                        post: "365 days if treatment provided by Co.R's Panel Specialist, Extended Panel Specialist or restructured hospital; or 180 days if treatment provided in other private hospitals",
+                        hyperbaric: "Not Available"
+                    },
+                    outpatient: {
+                        immunosuppressant: "As Charged",
+                        cancerDrugMonth: "5x MediShield Life limit",
+                        cancerDrugYear: "5x MediShield Life limit",
+                        renalFailure: "As Charged"
+                    },
+                    other: {
+                        cellTherapy: "$50,000 per policy year",
+                        protonTherapy: "$75,000 per policy year",
+                        finalExpense: "$4,000",
+                        congenitalChild: "$20,000 per lifetime of female life assured (limited to $4,000 per child)"
+                    },
+                    limits: {
+                        policyYear: "$600,000",
+                        lifetime: "Unlimited",
+                        refresh: "Not Available"
+                    }
+                },
+                advantages: [
+                    "Higher policy year limit ($1M vs $600k)",
+                    "Higher cell tissue and gene therapy coverage ($250,000 vs $50,000)",
+                    "Refresh benefit of $1,000,000 (not available with Company R)",
+                    "Coverage for post-hospitalisation hyperbaric oxygen therapy ($5,000/year - not available with Company R)"
+                ]
+            }
+        };
 
-      // Initialize with Company I as default
-      let currentCompetitor = "I";
+        // Initialize with Company I as default
+        let currentCompetitor = "I";
 
-      function updateComparison() {
-        currentCompetitor = document.getElementById("competitor-select").value;
-        const competitor = companyData[currentCompetitor];
-
-        // Update summary tab
-        document.getElementById(
-          "summary-title"
-        ).textContent = `Why PRUShield Plus Stands Out Against ${competitor.name}`;
-        document.getElementById("comp-name").textContent = competitor.name;
-
-        // Update summary table
-        const summaryTable = document.getElementById("summary-table");
-        // Clear existing rows (keeping header)
-        while (summaryTable.rows.length > 1) {
-          summaryTable.deleteRow(1);
+        function updateComparison() {
+            currentCompetitor = document.getElementById("competitor-select").value;
+            const competitor = companyData[currentCompetitor];
+            
+            // Update summary tab
+            document.getElementById("summary-title").textContent = `Why Company P Shield Plus Stands Out Against ${competitor.name}`;
+            document.getElementById("comp-name").textContent = competitor.name;
+            
+            // Update summary table
+            const summaryTable = document.getElementById("summary-table");
+            // Clear existing rows (keeping header)
+            while (summaryTable.rows.length > 1) {
+                summaryTable.deleteRow(1);
+            }
+            
+            // Add comparison rows
+            addComparisonRow(summaryTable, "Psychiatric Treatment Coverage", 
+                           "$7,000 per policy year", 
+                           competitor.features.inpatient.psychiatric);
+            
+            addComparisonRow(summaryTable, "Cell Tissue and Gene Therapy", 
+                           "$250,000 per policy year", 
+                           competitor.features.other.cellTherapy);
+            
+            addComparisonRow(summaryTable, "Proton Beam Therapy", 
+                           "$100,000 per policy year", 
+                           competitor.features.other.protonTherapy);
+            
+            addComparisonRow(summaryTable, "Community Hospital Coverage", 
+                           "As Charged for both sub-acute and rehabilitative", 
+                           competitor.features.inpatient.communityHospital);
+            
+            addComparisonRow(summaryTable, "Pre-Hospitalisation Coverage", 
+                           "180 days before admission", 
+                           competitor.features.prePostHospital.pre);
+            
+            addComparisonRow(summaryTable, "Post-Hospitalisation Coverage", 
+                           "365 days after discharge", 
+                           competitor.features.prePostHospital.post);
+            
+            addComparisonRow(summaryTable, "Policy Year Limit", 
+                           "$1,000,000", 
+                           competitor.features.limits.policyYear);
+            
+            addComparisonRow(summaryTable, "Living Organ Donor Benefit", 
+                           "$40,000 per policy year", 
+                           competitor.features.organDonor.asDonor);
+            
+            addComparisonRow(summaryTable, "Planned Overseas Treatment", 
+                           "Covered with conditions", 
+                           competitor.features.overseas.planned === "Not Available" ? "Not Available" : "Covered");
+            
+            addComparisonRow(summaryTable, "Letter of Guarantee Limit", 
+                           "Up to $50,000", 
+                           "Up to $50,000");
+            
+            // Update top reasons
+            const reasonsList = document.getElementById("reasons-list");
+            reasonsList.innerHTML = "";
+            competitor.advantages.forEach(reason => {
+                const li = document.createElement("li");
+                li.innerHTML = `<strong>${reason.split("(")[0]}</strong>${reason.includes("(") ? "(" + reason.split("(")[1] : ""}`;
+                reasonsList.appendChild(li);
+            });
+            
+            // Update detailed comparison
+            document.getElementById("detailed-title").textContent = `Detailed Feature Comparison: Company P Shield Plus vs ${competitor.name}`;
+            const detailedContainer = document.getElementById("detailed-comparison");
+            detailedContainer.innerHTML = generateDetailedComparison(competitor);
+            
+            // Update conclusion
+            document.getElementById("conclusion-content").innerHTML = generateConclusion(competitor);
         }
 
-        // Add comparison rows
-        addComparisonRow(
-          summaryTable,
-          "Psychiatric Treatment Coverage",
-          "$7,000 per policy year",
-          competitor.features.inpatient.psychiatric
-        );
-
-        addComparisonRow(
-          summaryTable,
-          "Cell Tissue and Gene Therapy",
-          "$250,000 per policy year",
-          competitor.features.other.cellTherapy
-        );
-
-        addComparisonRow(
-          summaryTable,
-          "Proton Beam Therapy",
-          "$100,000 per policy year",
-          competitor.features.other.protonTherapy
-        );
-
-        addComparisonRow(
-          summaryTable,
-          "Community Hospital Coverage",
-          "As Charged for both sub-acute and rehabilitative",
-          competitor.features.inpatient.communityHospital
-        );
-
-        addComparisonRow(
-          summaryTable,
-          "Pre-Hospitalisation Coverage",
-          "180 days before admission",
-          competitor.features.prePostHospital.pre
-        );
-
-        addComparisonRow(
-          summaryTable,
-          "Post-Hospitalisation Coverage",
-          "365 days after discharge",
-          competitor.features.prePostHospital.post
-        );
-
-        addComparisonRow(
-          summaryTable,
-          "Policy Year Limit",
-          "$1,000,000",
-          competitor.features.limits.policyYear
-        );
-
-        addComparisonRow(
-          summaryTable,
-          "Living Organ Donor Benefit",
-          "$40,000 per policy year",
-          competitor.features.organDonor.asDonor
-        );
-
-        addComparisonRow(
-          summaryTable,
-          "Planned Overseas Treatment",
-          "Covered with conditions",
-          competitor.features.overseas.planned === "Not Available"
-            ? "Not Available"
-            : "Covered"
-        );
-
-        addComparisonRow(
-          summaryTable,
-          "Letter of Guarantee Limit",
-          "Up to $50,000",
-          "Up to $50,000"
-        );
-
-        // Update top reasons
-        const reasonsList = document.getElementById("reasons-list");
-        reasonsList.innerHTML = "";
-        competitor.advantages.forEach((reason) => {
-          const li = document.createElement("li");
-          li.innerHTML = `<strong>${reason.split("(")[0]}</strong>${
-            reason.includes("(") ? "(" + reason.split("(")[1] : ""
-          }`;
-          reasonsList.appendChild(li);
-        });
-
-        // Update detailed comparison
-        document.getElementById(
-          "detailed-title"
-        ).textContent = `Detailed Feature Comparison: PRUShield Plus vs ${competitor.name}`;
-        const detailedContainer = document.getElementById(
-          "detailed-comparison"
-        );
-        detailedContainer.innerHTML = generateDetailedComparison(competitor);
-
-        // Update conclusion
-        document.getElementById("conclusion-content").innerHTML =
-          generateConclusion(competitor);
-      }
-
-      function addComparisonRow(table, feature, pruValue, compValue) {
-        const row = table.insertRow();
-        const cell1 = row.insertCell(0);
-        const cell2 = row.insertCell(1);
-        const cell3 = row.insertCell(2);
-        const cell4 = row.insertCell(3);
-
-        cell1.textContent = feature;
-        cell2.textContent = pruValue;
-        cell3.textContent = compValue;
-
-        // Determine advantage
-        if (
-          pruValue === compValue ||
-          (pruValue.includes("As Charged") && compValue.includes("As Charged"))
-        ) {
-          cell4.textContent = "Equal coverage";
-          cell4.className = "same";
-        } else if (
-          compValue === "Not Available" &&
-          pruValue !== "Not Available"
-        ) {
-          cell4.textContent = "PRU offers this benefit";
-          cell4.className = "better";
-        } else if (
-          pruValue === "Not Available" &&
-          compValue !== "Not Available"
-        ) {
-          cell4.textContent = "Competitor offers this benefit";
-          cell4.className = "worse";
-        } else if (
-          pruValue > compValue ||
-          pruValue.includes("Unlimited") ||
-          (pruValue.includes("days") &&
-            compValue.includes("days") &&
-            parseInt(pruValue) > parseInt(compValue))
-        ) {
-          cell4.textContent = "PRU has better coverage";
-          cell4.className = "better";
-        } else {
-          cell4.textContent = "Competitor has better coverage";
-          cell4.className = "worse";
+        function addComparisonRow(table, feature, companyPValue, compValue) {
+            const row = table.insertRow();
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+            const cell4 = row.insertCell(3);
+            
+            cell1.textContent = feature;
+            cell2.textContent = companyPValue;
+            cell3.textContent = compValue;
+            
+            // Determine advantage
+            if (companyPValue === compValue || (companyPValue.includes("As Charged") && compValue.includes("As Charged"))) {
+                cell4.textContent = "Equal coverage";
+                cell4.className = "same";
+            } else if (compValue === "Not Available" && companyPValue !== "Not Available") {
+                cell4.textContent = "Company P offers this benefit";
+                cell4.className = "better";
+            } else if (companyPValue === "Not Available" && compValue !== "Not Available") {
+                cell4.textContent = "Competitor offers this benefit";
+                cell4.className = "worse";
+            } else if (companyPValue > compValue || companyPValue.includes("Unlimited") || 
+                      (companyPValue.includes("days") && compValue.includes("days") && 
+                       parseInt(companyPValue) > parseInt(compValue))) {
+                cell4.textContent = "Company P has better coverage";
+                cell4.className = "better";
+            } else {
+                cell4.textContent = "Competitor has better coverage";
+                cell4.className = "worse";
+            }
         }
-      }
 
-      function generateDetailedComparison(competitor) {
-        let html = `
+        function generateDetailedComparison(competitor) {
+            let html = `
                 <div class="feature-category">
                     <h3>Basic Plan Information</h3>
                     <div class="feature-row">
                         <div class="feature-name">Plan Name</div>
-                        <div class="feature-value pru">PRUShield Plus</div>
-                        <div class="feature-value competitor">${
-                          competitor.features.basic.planName
-                        }</div>
+                        <div class="feature-value company-p">Company P Shield Plus</div>
+                        <div class="feature-value competitor">${competitor.features.basic.planName}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Coverage Type</div>
-                        <div class="feature-value ${
-                          competitor.features.basic.coverageType ===
-                          "As Charged"
-                            ? "same"
-                            : "better"
-                        }">As Charged</div>
-                        <div class="feature-value ${
-                          competitor.features.basic.coverageType ===
-                          "As Charged"
-                            ? "same"
-                            : "worse"
-                        }">${competitor.features.basic.coverageType}</div>
+                        <div class="feature-value ${competitor.features.basic.coverageType === "As Charged" ? 'same' : 'better'}">As Charged</div>
+                        <div class="feature-value ${competitor.features.basic.coverageType === "As Charged" ? 'same' : 'worse'}">${competitor.features.basic.coverageType}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Min. Entry Age</div>
-                        <div class="feature-value ${
-                          competitor.features.basic.minEntryAge === "1 ANB"
-                            ? "same"
-                            : "better"
-                        }">1 ANB</div>
-                        <div class="feature-value ${
-                          competitor.features.basic.minEntryAge === "1 ANB"
-                            ? "same"
-                            : "worse"
-                        }">${competitor.features.basic.minEntryAge}</div>
+                        <div class="feature-value ${competitor.features.basic.minEntryAge === "1 ANB" ? 'same' : 'better'}">1 ANB</div>
+                        <div class="feature-value ${competitor.features.basic.minEntryAge === "1 ANB" ? 'same' : 'worse'}">${competitor.features.basic.minEntryAge}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Max. Entry Age</div>
@@ -718,28 +613,8 @@
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Community Hospital (Rehabilitative & Sub-acute)</div>
-                        <div class="feature-value ${
-                          competitor.features.inpatient.communityHospital.includes(
-                            "As Charged"
-                          ) &&
-                          !competitor.features.inpatient.communityHospital.includes(
-                            "day"
-                          )
-                            ? "same"
-                            : "better"
-                        }">As Charged (no day limit)</div>
-                        <div class="feature-value ${
-                          competitor.features.inpatient.communityHospital.includes(
-                            "As Charged"
-                          ) &&
-                          !competitor.features.inpatient.communityHospital.includes(
-                            "day"
-                          )
-                            ? "same"
-                            : "worse"
-                        }">${
-          competitor.features.inpatient.communityHospital
-        }</div>
+                        <div class="feature-value ${competitor.features.inpatient.communityHospital.includes('As Charged') && !competitor.features.inpatient.communityHospital.includes('day') ? 'same' : 'better'}">As Charged (no day limit)</div>
+                        <div class="feature-value ${competitor.features.inpatient.communityHospital.includes('As Charged') && !competitor.features.inpatient.communityHospital.includes('day') ? 'same' : 'worse'}">${competitor.features.inpatient.communityHospital}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Accident Inpatient Dental Treatment</div>
@@ -749,47 +624,17 @@
                     <div class="feature-row">
                         <div class="feature-name">Inpatient Palliative Care Service (General)</div>
                         <div class="feature-value same">As Charged</div>
-                        <div class="feature-value same">${
-                          competitor.features.inpatient.palliativeGeneral
-                        }</div>
+                        <div class="feature-value same">${competitor.features.inpatient.palliativeGeneral}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Inpatient Palliative Care Service (Specialised)</div>
-                        <div class="feature-value ${
-                          competitor.features.inpatient.palliativeSpecial ===
-                          "$760/day"
-                            ? "same"
-                            : competitor.features.inpatient
-                                .palliativeSpecial === "As Charged"
-                            ? "better"
-                            : "worse"
-                        }">$760/day</div>
-                        <div class="feature-value ${
-                          competitor.features.inpatient.palliativeSpecial ===
-                          "$760/day"
-                            ? "same"
-                            : competitor.features.inpatient
-                                .palliativeSpecial === "As Charged"
-                            ? "worse"
-                            : "better"
-                        }">${
-          competitor.features.inpatient.palliativeSpecial
-        }</div>
+                        <div class="feature-value ${competitor.features.inpatient.palliativeSpecial === '$760/day' ? 'same' : competitor.features.inpatient.palliativeSpecial === 'As Charged' ? 'better' : 'worse'}">$760/day</div>
+                        <div class="feature-value ${competitor.features.inpatient.palliativeSpecial === '$760/day' ? 'same' : competitor.features.inpatient.palliativeSpecial === 'As Charged' ? 'worse' : 'better'}">${competitor.features.inpatient.palliativeSpecial}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Psychiatric Treatment</div>
-                        <div class="feature-value ${
-                          parseInt(competitor.features.inpatient.psychiatric) <
-                          7000
-                            ? "better"
-                            : "worse"
-                        }">$7,000 per policy year</div>
-                        <div class="feature-value ${
-                          parseInt(competitor.features.inpatient.psychiatric) <
-                          7000
-                            ? "worse"
-                            : "better"
-                        }">${competitor.features.inpatient.psychiatric}</div>
+                        <div class="feature-value ${parseInt(competitor.features.inpatient.psychiatric) < 7000 ? 'better' : 'worse'}">$7,000 per policy year</div>
+                        <div class="feature-value ${parseInt(competitor.features.inpatient.psychiatric) < 7000 ? 'worse' : 'better'}">${competitor.features.inpatient.psychiatric}</div>
                     </div>
                 </div>
                 
@@ -798,16 +643,12 @@
                     <div class="feature-row">
                         <div class="feature-name">Surgery Procedure</div>
                         <div class="feature-value same">As Charged (TOSP Table 1-7)</div>
-                        <div class="feature-value same">${
-                          competitor.features.surgical.surgery
-                        }</div>
+                        <div class="feature-value same">${competitor.features.surgical.surgery}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Major Organ Transplant</div>
                         <div class="feature-value same">As Charged (with organ limits)</div>
-                        <div class="feature-value same">${
-                          competitor.features.surgical.organTransplant
-                        }</div>
+                        <div class="feature-value same">${competitor.features.surgical.organTransplant}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Stem Cell Transplant Treatment</div>
@@ -816,22 +657,8 @@
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Breast Reconstruction after Mastectomy</div>
-                        <div class="feature-value ${
-                          competitor.features.surgical.breastReconstruction.includes(
-                            "if medically necessary"
-                          )
-                            ? "same"
-                            : "better"
-                        }">Covered if medically necessary</div>
-                        <div class="feature-value ${
-                          competitor.features.surgical.breastReconstruction.includes(
-                            "if medically necessary"
-                          )
-                            ? "same"
-                            : "worse"
-                        }">${
-          competitor.features.surgical.breastReconstruction
-        }</div>
+                        <div class="feature-value ${competitor.features.surgical.breastReconstruction.includes('if medically necessary') ? 'same' : 'better'}">Covered if medically necessary</div>
+                        <div class="feature-value ${competitor.features.surgical.breastReconstruction.includes('if medically necessary') ? 'same' : 'worse'}">${competitor.features.surgical.breastReconstruction}</div>
                     </div>
                 </div>
                 
@@ -839,35 +666,13 @@
                     <h3>Living Organ Donor Transplant Benefits</h3>
                     <div class="feature-row">
                         <div class="feature-name">Life assured as organ donor</div>
-                        <div class="feature-value ${
-                          competitor.features.organDonor.asDonor.includes(
-                            "$40,000"
-                          )
-                            ? "same"
-                            : "better"
-                        }">$40,000 per policy year (24mo wait)</div>
-                        <div class="feature-value ${
-                          competitor.features.organDonor.asDonor.includes(
-                            "$40,000"
-                          )
-                            ? "same"
-                            : "worse"
-                        }">${competitor.features.organDonor.asDonor}</div>
+                        <div class="feature-value ${competitor.features.organDonor.asDonor.includes('$40,000') ? 'same' : 'better'}">$40,000 per policy year (24mo wait)</div>
+                        <div class="feature-value ${competitor.features.organDonor.asDonor.includes('$40,000') ? 'same' : 'worse'}">${competitor.features.organDonor.asDonor}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Life assured as organ recipient</div>
-                        <div class="feature-value ${
-                          competitor.features.organDonor.asRecipient ===
-                          "Not Available"
-                            ? "better"
-                            : "same"
-                        }">$40,000 per transplant</div>
-                        <div class="feature-value ${
-                          competitor.features.organDonor.asRecipient ===
-                          "Not Available"
-                            ? "worse"
-                            : "same"
-                        }">${competitor.features.organDonor.asRecipient}</div>
+                        <div class="feature-value ${competitor.features.organDonor.asRecipient === 'Not Available' ? 'better' : 'same'}">$40,000 per transplant</div>
+                        <div class="feature-value ${competitor.features.organDonor.asRecipient === 'Not Available' ? 'worse' : 'same'}">${competitor.features.organDonor.asRecipient}</div>
                     </div>
                 </div>
                 
@@ -876,24 +681,12 @@
                     <div class="feature-row">
                         <div class="feature-name">Emergency Medical Treatment outside Singapore</div>
                         <div class="feature-value same">As Charged (with limits)</div>
-                        <div class="feature-value same">${
-                          competitor.features.overseas.emergency
-                        }</div>
+                        <div class="feature-value same">${competitor.features.overseas.emergency}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Planned Overseas Medical Treatment</div>
-                        <div class="feature-value ${
-                          competitor.features.overseas.planned ===
-                          "Not Available"
-                            ? "better"
-                            : "same"
-                        }">Covered with conditions</div>
-                        <div class="feature-value ${
-                          competitor.features.overseas.planned ===
-                          "Not Available"
-                            ? "worse"
-                            : "same"
-                        }">${competitor.features.overseas.planned}</div>
+                        <div class="feature-value ${competitor.features.overseas.planned === 'Not Available' ? 'better' : 'same'}">Covered with conditions</div>
+                        <div class="feature-value ${competitor.features.overseas.planned === 'Not Available' ? 'worse' : 'same'}">${competitor.features.overseas.planned}</div>
                     </div>
                 </div>
                 
@@ -901,50 +694,18 @@
                     <h3>Pre & Post-Hospitalisation Benefits</h3>
                     <div class="feature-row">
                         <div class="feature-name">Pre-Hospitalisation Coverage</div>
-                        <div class="feature-value ${
-                          parseInt(competitor.features.prePostHospital.pre) <
-                          180
-                            ? "better"
-                            : "same"
-                        }">180 days before admission</div>
-                        <div class="feature-value ${
-                          parseInt(competitor.features.prePostHospital.pre) <
-                          180
-                            ? "worse"
-                            : "same"
-                        }">${competitor.features.prePostHospital.pre}</div>
+                        <div class="feature-value ${parseInt(competitor.features.prePostHospital.pre) < 180 ? 'better' : 'same'}">180 days before admission</div>
+                        <div class="feature-value ${parseInt(competitor.features.prePostHospital.pre) < 180 ? 'worse' : 'same'}">${competitor.features.prePostHospital.pre}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Post-Hospitalisation Coverage</div>
-                        <div class="feature-value ${
-                          parseInt(competitor.features.prePostHospital.post) <
-                          365
-                            ? "better"
-                            : "same"
-                        }">365 days after discharge</div>
-                        <div class="feature-value ${
-                          parseInt(competitor.features.prePostHospital.post) <
-                          365
-                            ? "worse"
-                            : "same"
-                        }">${competitor.features.prePostHospital.post}</div>
+                        <div class="feature-value ${parseInt(competitor.features.prePostHospital.post) < 365 ? 'better' : 'same'}">365 days after discharge</div>
+                        <div class="feature-value ${parseInt(competitor.features.prePostHospital.post) < 365 ? 'worse' : 'same'}">${competitor.features.prePostHospital.post}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Post-Hospitalisation Hyperbaric Oxygen Therapy</div>
-                        <div class="feature-value ${
-                          competitor.features.prePostHospital.hyperbaric ===
-                          "Not Available"
-                            ? "better"
-                            : "same"
-                        }">$5,000 per policy year</div>
-                        <div class="feature-value ${
-                          competitor.features.prePostHospital.hyperbaric ===
-                          "Not Available"
-                            ? "worse"
-                            : "same"
-                        }">${
-          competitor.features.prePostHospital.hyperbaric
-        }</div>
+                        <div class="feature-value ${competitor.features.prePostHospital.hyperbaric === 'Not Available' ? 'better' : 'same'}">$5,000 per policy year</div>
+                        <div class="feature-value ${competitor.features.prePostHospital.hyperbaric === 'Not Available' ? 'worse' : 'same'}">${competitor.features.prePostHospital.hyperbaric}</div>
                     </div>
                 </div>
                 
@@ -953,54 +714,22 @@
                     <div class="feature-row">
                         <div class="feature-name">Immunosuppressant for Organ Transplant</div>
                         <div class="feature-value same">As Charged</div>
-                        <div class="feature-value same">${
-                          competitor.features.outpatient.immunosuppressant
-                        }</div>
+                        <div class="feature-value same">${competitor.features.outpatient.immunosuppressant}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Outpatient Cancer Treatment (Drugs per month)</div>
-                        <div class="feature-value ${
-                          competitor.features.outpatient.cancerDrugMonth.includes(
-                            "5x"
-                          )
-                            ? "same"
-                            : "better"
-                        }">5x MediShield Life limit</div>
-                        <div class="feature-value ${
-                          competitor.features.outpatient.cancerDrugMonth.includes(
-                            "5x"
-                          )
-                            ? "same"
-                            : "worse"
-                        }">${
-          competitor.features.outpatient.cancerDrugMonth
-        }</div>
+                        <div class="feature-value ${competitor.features.outpatient.cancerDrugMonth.includes('5x') ? 'same' : 'better'}">5x MediShield Life limit</div>
+                        <div class="feature-value ${competitor.features.outpatient.cancerDrugMonth.includes('5x') ? 'same' : 'worse'}">${competitor.features.outpatient.cancerDrugMonth}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Outpatient Cancer Treatment (Services per year)</div>
-                        <div class="feature-value ${
-                          competitor.features.outpatient.cancerDrugYear.includes(
-                            "5x"
-                          )
-                            ? "same"
-                            : "better"
-                        }">5x MediShield Life limit</div>
-                        <div class="feature-value ${
-                          competitor.features.outpatient.cancerDrugYear.includes(
-                            "5x"
-                          )
-                            ? "same"
-                            : "worse"
-                        }">${
-          competitor.features.outpatient.cancerDrugYear
-        }</div>
+                        <div class="feature-value ${competitor.features.outpatient.cancerDrugYear.includes('5x') ? 'same' : 'better'}">5x MediShield Life limit</div>
+                        <div class="feature-value ${competitor.features.outpatient.cancerDrugYear.includes('5x') ? 'same' : 'worse'}">${competitor.features.outpatient.cancerDrugYear}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Outpatient Renal Failure Treatment</div>
                         <div class="feature-value same">As Charged</div>
-                        <div class="feature-value same">${
-                          competitor.features.outpatient.renalFailure
-                        }</div>
+                        <div class="feature-value same">${competitor.features.outpatient.renalFailure}</div>
                     </div>
                 </div>
                 
@@ -1008,67 +737,23 @@
                     <h3>Other Benefits</h3>
                     <div class="feature-row">
                         <div class="feature-name">Cell Tissue and Gene Therapy Treatment</div>
-                        <div class="feature-value ${
-                          parseInt(competitor.features.other.cellTherapy) <
-                          250000
-                            ? "better"
-                            : "same"
-                        }">$250,000 per policy year</div>
-                        <div class="feature-value ${
-                          parseInt(competitor.features.other.cellTherapy) <
-                          250000
-                            ? "worse"
-                            : "same"
-                        }">${competitor.features.other.cellTherapy}</div>
+                        <div class="feature-value ${parseInt(competitor.features.other.cellTherapy) < 250000 ? 'better' : 'same'}">$250,000 per policy year</div>
+                        <div class="feature-value ${parseInt(competitor.features.other.cellTherapy) < 250000 ? 'worse' : 'same'}">${competitor.features.other.cellTherapy}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Proton Beam Therapy</div>
-                        <div class="feature-value ${
-                          parseInt(competitor.features.other.protonTherapy) <
-                          100000
-                            ? "better"
-                            : "same"
-                        }">$100,000 per policy year</div>
-                        <div class="feature-value ${
-                          parseInt(competitor.features.other.protonTherapy) <
-                          100000
-                            ? "worse"
-                            : "same"
-                        }">${competitor.features.other.protonTherapy}</div>
+                        <div class="feature-value ${parseInt(competitor.features.other.protonTherapy) < 100000 ? 'better' : 'same'}">$100,000 per policy year</div>
+                        <div class="feature-value ${parseInt(competitor.features.other.protonTherapy) < 100000 ? 'worse' : 'same'}">${competitor.features.other.protonTherapy}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Final Expense Provision</div>
-                        <div class="feature-value ${
-                          competitor.features.other.finalExpense ===
-                            "Not Available" ||
-                          parseInt(competitor.features.other.finalExpense) <
-                            3000
-                            ? "better"
-                            : "worse"
-                        }">$3,000</div>
-                        <div class="feature-value ${
-                          competitor.features.other.finalExpense ===
-                            "Not Available" ||
-                          parseInt(competitor.features.other.finalExpense) <
-                            3000
-                            ? "worse"
-                            : "better"
-                        }">${competitor.features.other.finalExpense}</div>
+                        <div class="feature-value ${competitor.features.other.finalExpense === 'Not Available' || parseInt(competitor.features.other.finalExpense) < 3000 ? 'better' : 'worse'}">$3,000</div>
+                        <div class="feature-value ${competitor.features.other.finalExpense === 'Not Available' || parseInt(competitor.features.other.finalExpense) < 3000 ? 'worse' : 'better'}">${competitor.features.other.finalExpense}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Congenital Abnormalities of Life Assured's Biological Child</div>
-                        <div class="feature-value ${
-                          competitor.features.other.congenitalChild ===
-                          "Not Available"
-                            ? "better"
-                            : "same"
-                        }">$16,000 per lifetime</div>
-                        <div class="feature-value ${
-                          competitor.features.other.congenitalChild ===
-                          "Not Available"
-                            ? "worse"
-                            : "same"
-                        }">${competitor.features.other.congenitalChild}</div>
+                        <div class="feature-value ${competitor.features.other.congenitalChild === 'Not Available' ? 'better' : 'same'}">$16,000 per lifetime</div>
+                        <div class="feature-value ${competitor.features.other.congenitalChild === 'Not Available' ? 'worse' : 'same'}">${competitor.features.other.congenitalChild}</div>
                     </div>
                 </div>
                 
@@ -1076,18 +761,8 @@
                     <h3>Policy Limits</h3>
                     <div class="feature-row">
                         <div class="feature-name">Policy Year Limit</div>
-                        <div class="feature-value ${
-                          parseInt(competitor.features.limits.policyYear) <
-                          1000000
-                            ? "better"
-                            : "same"
-                        }">$1,000,000</div>
-                        <div class="feature-value ${
-                          parseInt(competitor.features.limits.policyYear) <
-                          1000000
-                            ? "worse"
-                            : "same"
-                        }">${competitor.features.limits.policyYear}</div>
+                        <div class="feature-value ${parseInt(competitor.features.limits.policyYear) < 1000000 ? 'better' : 'same'}">$1,000,000</div>
+                        <div class="feature-value ${parseInt(competitor.features.limits.policyYear) < 1000000 ? 'worse' : 'same'}">${competitor.features.limits.policyYear}</div>
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Lifetime Limit</div>
@@ -1096,199 +771,92 @@
                     </div>
                     <div class="feature-row">
                         <div class="feature-name">Refresh Benefit</div>
-                        <div class="feature-value ${
-                          competitor.features.limits.refresh === "Not Available"
-                            ? "better"
-                            : "same"
-                        }">$1,000,000</div>
-                        <div class="feature-value ${
-                          competitor.features.limits.refresh === "Not Available"
-                            ? "worse"
-                            : "same"
-                        }">${competitor.features.limits.refresh}</div>
+                        <div class="feature-value ${competitor.features.limits.refresh === 'Not Available' ? 'better' : 'same'}">$1,000,000</div>
+                        <div class="feature-value ${competitor.features.limits.refresh === 'Not Available' ? 'worse' : 'same'}">${competitor.features.limits.refresh}</div>
                     </div>
                 </div>
             `;
+            
+            return html;
+        }
 
-        return html;
-      }
-
-      function generateConclusion(competitor) {
-        return `
-                <h2>Conclusion: Why PRUShield Plus is the Superior Choice vs ${
-                  competitor.name
-                }</h2>
+        function generateConclusion(competitor) {
+            return `
+                <h2>Conclusion: Why Company P Shield Plus is the Superior Choice vs ${competitor.name}</h2>
                 
-                <p>After a thorough comparison of PRUShield Plus and ${
-                  competitor.name
-                }, PRUShield Plus emerges as the clearly superior health insurance option for several compelling reasons:</p>
+                <p>After a thorough comparison of Company P Shield Plus and ${competitor.name}, Company P Shield Plus emerges as the clearly superior health insurance option for several compelling reasons:</p>
                 
                 <h3>1. More Comprehensive Coverage</h3>
-                <p>PRUShield Plus offers significantly higher coverage limits in critical areas:
+                <p>Company P Shield Plus offers significantly higher coverage limits in critical areas:
                     <ul>
-                        <li><strong>Psychiatric treatment:</strong> $7,000 vs ${
-                          competitor.features.inpatient.psychiatric
-                        }</li>
-                        ${
-                          competitor.features.other.cellTherapy.includes(
-                            "250,000"
-                          )
-                            ? ""
-                            : `<li><strong>Cell tissue and gene therapy:</strong> $250,000 vs ${competitor.features.other.cellTherapy}</li>`
-                        }
-                        ${
-                          competitor.features.other.protonTherapy.includes(
-                            "100,000"
-                          )
-                            ? ""
-                            : `<li><strong>Proton beam therapy:</strong> $100,000 vs ${competitor.features.other.protonTherapy}</li>`
-                        }
-                        <li><strong>Policy year limit:</strong> $1,000,000 vs ${
-                          competitor.features.limits.policyYear
-                        }</li>
-                        ${
-                          competitor.features.inpatient.communityHospital.includes(
-                            "As Charged"
-                          ) &&
-                          !competitor.features.inpatient.communityHospital.includes(
-                            "day"
-                          )
-                            ? ""
-                            : `<li><strong>Community hospital stays:</strong> No arbitrary day limit vs ${competitor.features.inpatient.communityHospital}</li>`
-                        }
+                        <li><strong>Psychiatric treatment:</strong> $7,000 vs ${competitor.features.inpatient.psychiatric}</li>
+                        ${competitor.features.other.cellTherapy.includes('250,000') ? '' : `<li><strong>Cell tissue and gene therapy:</strong> $250,000 vs ${competitor.features.other.cellTherapy}</li>`}
+                        ${competitor.features.other.protonTherapy.includes('100,000') ? '' : `<li><strong>Proton beam therapy:</strong> $100,000 vs ${competitor.features.other.protonTherapy}</li>`}
+                        <li><strong>Policy year limit:</strong> $1,000,000 vs ${competitor.features.limits.policyYear}</li>
+                        ${competitor.features.inpatient.communityHospital.includes('As Charged') && !competitor.features.inpatient.communityHospital.includes('day') ? '' : `<li><strong>Community hospital stays:</strong> No arbitrary day limit vs ${competitor.features.inpatient.communityHospital}</li>`}
                     </ul>
                 </p>
                 
                 <h3>2. Longer Coverage Periods</h3>
-                <p>PRUShield Plus provides more extensive pre- and post-hospitalisation coverage:
+                <p>Company P Shield Plus provides more extensive pre- and post-hospitalisation coverage:
                     <ul>
-                        <li><strong>Pre-hospitalisation:</strong> 180 days vs ${
-                          competitor.features.prePostHospital.pre.includes(
-                            "days"
-                          )
-                            ? parseInt(
-                                competitor.features.prePostHospital.pre
-                              ) + " days"
-                            : competitor.features.prePostHospital.pre
-                        }</li>
-                        <li><strong>Post-hospitalisation:</strong> 365 days vs ${
-                          competitor.features.prePostHospital.post.includes(
-                            "days"
-                          )
-                            ? parseInt(
-                                competitor.features.prePostHospital.post
-                              ) + " days"
-                            : competitor.features.prePostHospital.post
-                        }</li>
+                        <li><strong>Pre-hospitalisation:</strong> 180 days vs ${competitor.features.prePostHospital.pre.includes('days') ? parseInt(competitor.features.prePostHospital.pre) + ' days' : competitor.features.prePostHospital.pre}</li>
+                        <li><strong>Post-hospitalisation:</strong> 365 days vs ${competitor.features.prePostHospital.post.includes('days') ? parseInt(competitor.features.prePostHospital.post) + ' days' : competitor.features.prePostHospital.post}</li>
                     </ul>
                     This means more complete care coverage throughout your treatment journey.
                 </p>
                 
-                ${
-                  competitor.features.overseas.planned === "Not Available"
-                    ? `
-                <h3>3. Additional Benefits Not Available with ${
-                  competitor.name.split(" ")[0]
-                }</h3>
-                <p>PRUShield Plus includes several valuable benefits that ${
-                  competitor.name.split(" ")[0]
-                } doesn't offer:
+                ${competitor.features.overseas.planned === 'Not Available' ? `
+                <h3>3. Additional Benefits Not Available with ${competitor.name.split(' ')[0]}</h3>
+                <p>Company P Shield Plus includes several valuable benefits that ${competitor.name.split(' ')[0]} doesn't offer:
                     <ul>
                         <li>Planned overseas medical treatment coverage</li>
-                        ${
-                          competitor.features.prePostHospital.hyperbaric ===
-                          "Not Available"
-                            ? "<li>Post-hospitalisation hyperbaric oxygen therapy ($5,000/year)</li>"
-                            : ""
-                        }
-                        ${
-                          competitor.features.limits.refresh === "Not Available"
-                            ? "<li>Refresh benefit of $1,000,000</li>"
-                            : ""
-                        }
-                        ${
-                          competitor.features.other.congenitalChild ===
-                          "Not Available"
-                            ? "<li>Coverage for congenital abnormalities of biological child</li>"
-                            : ""
-                        }
+                        ${competitor.features.prePostHospital.hyperbaric === 'Not Available' ? '<li>Post-hospitalisation hyperbaric oxygen therapy ($5,000/year)</li>' : ''}
+                        ${competitor.features.limits.refresh === 'Not Available' ? '<li>Refresh benefit of $1,000,000</li>' : ''}
+                        ${competitor.features.other.congenitalChild === 'Not Available' ? '<li>Coverage for congenital abnormalities of biological child</li>' : ''}
                     </ul>
                 </p>
-                `
-                    : ""
-                }
+                ` : ''}
                 
                 <h3>4. Better Living Organ Donor Coverage</h3>
-                <p>PRUShield Plus provides:
+                <p>Company P Shield Plus provides:
                     <ul>
-                        <li>$40,000 ${
-                          competitor.features.organDonor.asDonor.includes(
-                            "per policy year"
-                          )
-                            ? ""
-                            : "annual limit (vs " +
-                              competitor.features.organDonor.asDonor +
-                              ")"
-                        }</li>
-                        ${
-                          competitor.features.organDonor.asRecipient ===
-                          "Not Available"
-                            ? "<li>Coverage for life assured as organ recipient (not available with " +
-                              competitor.name.split(" ")[0] +
-                              ")</li>"
-                            : ""
-                        }
+                        <li>$40,000 ${competitor.features.organDonor.asDonor.includes('per policy year') ? '' : 'annual limit (vs ' + competitor.features.organDonor.asDonor + ')'}</li>
+                        ${competitor.features.organDonor.asRecipient === 'Not Available' ? '<li>Coverage for life assured as organ recipient (not available with ' + competitor.name.split(' ')[0] + ')</li>' : ''}
                     </ul>
                 </p>
                 
-                ${
-                  competitor.features.outpatient.cancerDrugMonth.includes(
-                    "4x"
-                  ) ||
-                  competitor.features.outpatient.cancerDrugYear.includes("4x")
-                    ? `
+                ${competitor.features.outpatient.cancerDrugMonth.includes('4x') || competitor.features.outpatient.cancerDrugYear.includes('4x') ? `
                 <h3>5. Superior Cancer Treatment Coverage</h3>
-                <p>PRUShield Plus offers 5x MediShield Life limits for cancer drug treatment and services compared to ${
-                  competitor.name.split(" ")[0]
-                }'s ${
-                        competitor.features.outpatient.cancerDrugMonth.includes(
-                          "4x"
-                        )
-                          ? "4x"
-                          : "5x"
-                      } limits, providing more comprehensive cancer care coverage.</p>
-                `
-                    : ""
-                }
+                <p>Company P Shield Plus offers 5x MediShield Life limits for cancer drug treatment and services compared to ${competitor.name.split(' ')[0]}'s ${competitor.features.outpatient.cancerDrugMonth.includes('4x') ? '4x' : '5x'} limits, providing more comprehensive cancer care coverage.</p>
+                ` : ''}
                 
                 <div class="highlight-box">
                     <div class="highlight-title">Final Recommendation</div>
-                    <p>For individuals seeking the most comprehensive health insurance coverage with higher limits, longer coverage periods, and additional valuable benefits, PRUShield Plus is clearly the superior choice over ${
-                      competitor.name
-                    }.</p>
-                    <p>The combination of higher coverage amounts, more extensive time periods for pre/post-hospitalisation care, and additional benefits make PRUShield Plus the better value proposition for comprehensive health protection.</p>
+                    <p>For individuals seeking the most comprehensive health insurance coverage with higher limits, longer coverage periods, and additional valuable benefits, Company P Shield Plus is clearly the superior choice over ${competitor.name}.</p>
+                    <p>The combination of higher coverage amounts, more extensive time periods for pre/post-hospitalisation care, and additional benefits make Company P Shield Plus the better value proposition for comprehensive health protection.</p>
                 </div>
             `;
-      }
+        }
 
-      function switchTab(tabId) {
-        // Hide all tab contents
-        document.querySelectorAll(".tab-content").forEach((content) => {
-          content.classList.remove("active");
-        });
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Deactivate all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Activate selected tab and content
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
 
-        // Deactivate all tabs
-        document.querySelectorAll(".tab").forEach((tab) => {
-          tab.classList.remove("active");
-        });
-
-        // Activate selected tab and content
-        document.getElementById(tabId).classList.add("active");
-        event.currentTarget.classList.add("active");
-      }
-
-      // Initialize the comparison on page load
-      window.onload = updateComparison;
+        // Initialize the comparison on page load
+        window.onload = updateComparison;
     </script>
-  </body>
+</body>
 </html>
